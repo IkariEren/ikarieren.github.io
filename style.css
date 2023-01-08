@@ -54,11 +54,10 @@ a.download:active {
     font-size: medium;
 }
 .mylinks {
-    position: absolute;
     width: 1000px;
     height: 100px;
-    margin-left: 200px;
-    margin-top: 200px;
+    margin: auto;
+    margin-top: 220px;
     text-align: left;
     font-size: large;
 }
