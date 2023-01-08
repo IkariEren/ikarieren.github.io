@@ -1,0 +1,80 @@
+table {
+    border-collapse: collapse;
+}
+table,th,td {
+    border: 2px solid black;
+}
+th,td {
+    padding: 15px;
+}
+th {
+    text-align: center;
+}
+a.link:link,a.link:visited {
+    text-decoration: none;
+    color: blue;
+}
+a.link:hover {
+    text-decoration: underline;
+}
+a.link:active {
+    color: red;
+}
+a.download:link,
+a.download:visited {
+    text-decoration: none;
+    border-radius: 5px;
+    background: deepskyblue;
+    color: white;
+    padding: 10px;
+    -webkit-transition-duration: 0.3s; /*Safari*/
+    transition-duration: 0.3s;
+}
+a.download:hover {
+    background: darkblue
+}
+a.download:active {
+    -webkit-transition-duration: 0.1s; /*Safari*/
+    transition-duration: 0.1s;
+    background: red;
+}
+.main {
+    width: 1000px;
+    height: 100px;
+    margin: auto;
+    text-align: left;
+    font-size: large;
+}
+.back {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-left: 50px;
+    text-align: left;
+    font-size: medium;
+}
+.mylinks {
+    position: absolute;
+    width: 1000px;
+    height: 100px;
+    margin-left: 200px;
+    margin-top: 200px;
+    text-align: left;
+    font-size: large;
+}
+.about {
+    position: absolute;
+    width: 1000px;
+    height: 100px;
+    bottom: 0;
+    text-align: right;
+    font-size: medium;
+}
+.about_gal {
+    position: absolute;
+    width: 1000px;
+    height: 100px;
+    bottom: -100px;
+    text-align: right;
+    font-size: medium;
+}
