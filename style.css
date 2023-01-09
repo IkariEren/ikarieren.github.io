@@ -20,8 +20,7 @@ a.link:hover {
 a.link:active {
     color: red;
 }
-a.download:link,
-a.download:visited {
+a.button:link,a.button:visited {
     text-decoration: none;
     border-radius: 5px;
     background: deepskyblue;
@@ -30,10 +29,10 @@ a.download:visited {
     -webkit-transition-duration: 0.3s; /*Safari*/
     transition-duration: 0.3s;
 }
-a.download:hover {
+a.button:hover {
     background: darkblue
 }
-a.download:active {
+a.button:active {
     -webkit-transition-duration: 0.1s; /*Safari*/
     transition-duration: 0.1s;
     background: red;
@@ -44,14 +43,6 @@ a.download:active {
     margin: auto;
     text-align: left;
     font-size: large;
-}
-.back {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    margin-left: 50px;
-    text-align: left;
-    font-size: medium;
 }
 .mylinks {
     width: 1000px;
