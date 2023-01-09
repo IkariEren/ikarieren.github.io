@@ -12,25 +12,29 @@ th {
 }
 a.link:link,a.link:visited {
     text-decoration: none;
-    color: blue;
+    -webkit-transition-duration: 0.3s; /*Safari*/
+    transition-duration: 0.3s;
+    color: rgb(255, 100, 183);
 }
 a.link:hover {
-    text-decoration: underline;
+    color: rgb(255, 0, 136);
 }
 a.link:active {
+    -webkit-transition-duration: 0.1s; /*Safari*/
+    transition-duration: 0.1s;
     color: red;
 }
 a.button:link,a.button:visited {
     text-decoration: none;
     border-radius: 5px;
-    background: deepskyblue;
+    background: rgb(255, 100, 183); 
     color: white;
     padding: 10px;
     -webkit-transition-duration: 0.3s; /*Safari*/
     transition-duration: 0.3s;
 }
 a.button:hover {
-    background: darkblue
+    background: rgb(255, 0, 136);
 }
 a.button:active {
     -webkit-transition-duration: 0.1s; /*Safari*/

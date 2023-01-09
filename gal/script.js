@@ -14,12 +14,12 @@ function sayhuahuo() {
 function torrentTime() {
     var timeNow = new Date().getHours();
     var torrentStatus = document.getElementsByName("torrent");
-    if (timeNow >= 9 && timeNow <= 21) {
+    if (timeNow >= 9 && timeNow <= 20) {
         for (var i = 0; i <= galNumber; i++) {
             torrentStatus[i].innerHTML = "做种中";
         }
     }
-    else if (timeNow <= 8 && timeNow >= 22) {
+    else if (timeNow <= 8 || timeNow >= 21) {
         for (var i = 0; i <= galNumber; i++) {
             torrentStatus[i].innerHTML = "未作种";
         }
