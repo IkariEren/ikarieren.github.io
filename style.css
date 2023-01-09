@@ -54,17 +54,17 @@ a.button:active {
 }
 .about {
     position: absolute;
-    width: 1000px;
-    height: 100px;
+    width: 1200px;
     bottom: 0;
+    right: 200px;
     text-align: right;
     font-size: medium;
 }
 .about_gal {
     position: absolute;
-    width: 1000px;
-    height: 100px;
-    bottom: -100px;
+    width: 1200px;
+    bottom: -130px;
+    right: 200px;
     text-align: right;
     font-size: medium;
 }
