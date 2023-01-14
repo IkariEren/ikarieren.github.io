@@ -10,6 +10,16 @@ function sayhuahuo() {
         window.close();
     }
 }
+/*function downloadMethod1() {
+    var downloadLink = document.getElementsByName("download");
+    $.ajax({
+        type: "get",
+        url: "torrent.json"
+        dataType: "json",
+        success: function (data) {
+        }
+    })
+}*/
 function torrentTime() {
     var timeNow = new Date().getHours();
     var torrentStatus = document.getElementsByName("torrent");

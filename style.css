@@ -64,11 +64,3 @@ a.button:active {
     text-align: right;
     font-size: medium;
 }
-.about_gal {
-    position: absolute;
-    width: 1200px;
-    bottom: -190px;
-    right: 200px;
-    text-align: right;
-    font-size: medium;
-}
