@@ -10,28 +10,16 @@ function sayhuahuo() {
         window.close();
     }
 }
-/*function downloadMethod1() {
-    var downloadLink = document.getElementsByName("download");
-    $.ajax({
-        type: "get",
-        url: "torrent.json"
-        dataType: "json",
-        success: function (data) {
-        }
-    })
-}*/
 function torrentTime() {
     var timeNow = new Date().getHours();
-    var torrentStatus = document.getElementsByName("torrent");
+    var torrentStatus = document.getElementById("torrent");
     if (timeNow >= 9 && timeNow <= 20) {
-        for (var i = 0; i <= 9999; i++) {
-            torrentStatus[i].innerHTML = "做种中";
-        }
+        torrentStatus.innerHTML = "做种状态：做种中";
     }
     else if (timeNow <= 8 || timeNow >= 21) {
-        for (var i = 0; i <= 9999; i++) {
-            torrentStatus[i].innerHTML = "未作种";
-        }
+        torrentStatus.innerHTML = "做种状态：未作种";
     }
 }
-window.onload = torrentTime();
+$(document).ready(function () {
+    torrentTime();
+});
