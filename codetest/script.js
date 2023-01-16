@@ -33,7 +33,7 @@ $(document).ready(function () {
         request.onreadystatechange = function () {
             if (request.readyState == 4) {
                 var jsonObj = JSON.parse(request.responseText); // 解析 JSON 数据
-                alert(test1);
+                alert("Hello");
             }
         }
         request.open("get", url, true);
