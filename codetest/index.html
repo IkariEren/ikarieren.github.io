@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jquery-3.6.3.js"></script>
+    <meta content="text/html; charset=utf-8">
+    <title>AJAX And JSON</title>
+    <script type="application/javascript">
+        function load() {
+            var url = "test.json"; // 获取 JSON 数据的链接
+            var request;
+            if (window.XMLHttpRequest) {
+                request = new XMLHttpRequest(); //发送 Ajax 请求，适用于 Chrome, mozilla 等浏览器 
+            } else if (window.ActiveXObject) {
+                request = new ActiveXObject("Microsoft.XMLHTTP"); // 发送 Ajax 请求，适用于 IE 浏览器 
+            }
+            request.onreadystatechange = function() {
+                if (request.readyState == 4) {
+                    var jsonObj = JSON.parse(request.responseText); // 解析 JSON 数据
+                    document.getElementById("title").innerHTML     = jsonObj.title;
+                    document.getElementById("author").innerHTML    = jsonObj.author;
+                    document.getElementById("url").innerHTML       = jsonObj.url;
+                    document.getElementById("catalogue").innerHTML = jsonObj.catalogue;
+                }
+            }
+            request.open("GET", url, true);
+            request.send();
+        }
+    </script>
+</head>
+<body>
+    Title: <span id="title"></span><br />
+    Author: <span id="author"></span><br />
+    Url: <span id="url"></span><br />
+    Catalogue: <span id="catalogue"></span><br />
+    <button type="button" onclick="load()">点击加载 JSON 数据</button>
+</body>
+</html>
