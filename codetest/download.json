@@ -1,4 +1,32 @@
 {
-    "test1" : "text1",
-    "test2" : "text2"
+    "download": [
+        {
+            "bt": "MaitetsuLR.torrent",
+            "baidu": "https://pan.baidu.com/#bdlink=OWE5MTZiNzg2MDcwMjFmNjFlZjlmMTg1MzAzMDhhNjUjMTM1NTc0NDg5OTEjTWFpdGV0c3VMUi43eg=="
+        },
+        {
+            "bt": "CafeStella.torrent",
+            "baidu": "https://pan.baidu.com/#bdlink=NzU5YjYwNGFiM2M1N2I2Y2NmMjhlMzM4MmYwZDVmMzAjMzIyMTIyNTQ3MiNDYWZlU3RlbGxhLnBhcnQyLnJhcgpjYTQwZjZlNmQwYjNlZjg5NmZlOTEyZTU0NGQxMWNkMSMzMjIxMjI1NDcyI0NhZmVTdGVsbGEucGFydDEucmFyCjA3ZTMzMzU5NGFlNzI1ZTNkNGE5NjYyNTJjNDEwZWU1Izk1NTQyOTEwNSNDYWZlU3RlbGxhLnBhcnQzLnJhcg=="
+        },
+        {
+            "bt": "RJ.torrent",
+            "baidu": "https://pan.baidu.com/#bdlink=MjNlN2NiYjM4ZGE1ZTA1ZTZkNmRkZTIxNWZkMGM2ZGMjOTA4ODU3MzE1OCNSSi5yYXI="
+        },
+        {
+            "bt": "SenrenBanka.torrent",
+            "baidu": "https://pan.baidu.com/#bdlink=ZjIxZjJjYjA5Mjg5MzQ2MjEzMmFiN2Y3NmRiN2JmNGQjODU1NzIxODM5OCNTZW5yZW5CYW5rYS5yYXI="
+        },
+        {
+            "bt": "SabbatOfTheWitch.torrent",
+            "baidu": "https://pan.baidu.com/#bdlink=NjMyYjU1YmU4ZTM1YWNjN2U2MDUxZjJlMTYxZDQ5MTcjMzk0OTQ2MzY2MCNTYWJiYXRPZlRoZVdpdGNoLjd6"
+        },
+        {
+            "bt": "SakuranoUta.torrent",
+            "baidu": "https://pan.baidu.com/#bdlink=NWRmMjM5MDZhYWRjNWQ5MTY2NDMyMzdhMGM1NDcwMmIjMjkwNzU1MDEyMCNTYWt1cmFub1V0YS43eg=="
+        },
+        {
+            "bt": "Atri.torrent",
+            "baidu": "https://pan.baidu.com/#bdlink=MDliMjA3MTBhZGJhYTkzODA5NGQzZjFmMTg2NTBhZDkjMzg5MjE3OTc4MSNBdHJpLnppcA=="
+        }
+    ]
 }

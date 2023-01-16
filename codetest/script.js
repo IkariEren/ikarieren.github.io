@@ -20,18 +20,30 @@ function torrentTime() {
         torrentStatus.innerHTML = "做种状态：未作种";
     }
 }
-function load() {
-    var url = "download.json"; // 获取 JSON 数据的链接
+function downloadSet(method) {
+    var url = "download.json";
     var request;
     if (window.XMLHttpRequest) {
-        request = new XMLHttpRequest(); //发送 Ajax 请求，适用于 Chrome, mozilla 等浏览器 
+        request = new XMLHttpRequest();
     } else if (window.ActiveXObject) {
-        request = new ActiveXObject("Microsoft.XMLHTTP"); // 发送 Ajax 请求，适用于 IE 浏览器 
+        request = new ActiveXObject("Microsoft.XMLHTTP");
     }
     request.onreadystatechange = function () {
         if (request.readyState == 4) {
-            var jsonObj = JSON.parse(request.responseText); // 解析 JSON 数据
-            alert(jsonObj.test1);
+            var jsonObj = JSON.parse(request.responseText);
+            var downloadMethods = document.getElementsByName("download");
+            if (method == 1) {
+                for (var i = 0; i < downloadMethods.length; i++) {
+                    download[i].innerHTML = "度盘秒传";
+                    download[i].href = jsonObj.download[i].baidu;
+                }
+            }
+            if (method == 0) {
+                for (var i = 0; i < downloadMethods.length; i++) {
+                    download[i].innerHTML = "下载";
+                    download[i].href = jsonObj.download[i].bt;
+                }
+            }
         }
     }
     request.open("get", url, true);
@@ -39,19 +51,21 @@ function load() {
 }
 $(document).ready(function () {
     torrentTime();
-    load();
     $("#downloadMethod1").removeClass("button");
     $("#downloadMethod1").addClass("buttonDisabled");
+    downloadSet(0);
     $("#downloadMethod1").click(function () {
         $(this).addClass("buttonDisabled");
         $(this).removeClass("button");
         $("#downloadMethod2").removeClass("buttonDisabled");
         $("#downloadMethod2").addClass("button");
+        downloadSet(0);
     });
     $("#downloadMethod2").click(function () {
         $(this).addClass("buttonDisabled");
         $(this).removeClass("button");
         $("#downloadMethod1").removeClass("buttonDisabled");
         $("#downloadMethod1").addClass("button");
+        downloadSet(1);
     });
 });
