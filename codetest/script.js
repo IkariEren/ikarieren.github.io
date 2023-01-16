@@ -34,14 +34,14 @@ function downloadSet(method) {
             var downloadMethods = document.getElementsByName("download");
             if (method == 1) {
                 for (var i = 0; i < downloadMethods.length; i++) {
-                    download[i].innerHTML = "度盘秒传";
-                    download[i].href = jsonObj.download[i].baidu;
+                    downloadMethods[i].innerHTML = "度盘秒传";
+                    downloadMethods[i].href = jsonObj.download[i].baidu;
                 }
             }
             if (method == 0) {
                 for (var i = 0; i < downloadMethods.length; i++) {
-                    download[i].innerHTML = "下载";
-                    download[i].href = jsonObj.download[i].bt;
+                    downloadMethods[i].innerHTML = "下载";
+                    downloadMethods[i].href = jsonObj.download[i].bt;
                 }
             }
         }
