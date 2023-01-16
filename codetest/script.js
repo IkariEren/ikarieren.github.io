@@ -20,25 +20,26 @@ function torrentTime() {
         torrentStatus.innerHTML = "做种状态：未作种";
     }
 }
+function load() {
+    var url = "download.json"; // 获取 JSON 数据的链接
+    var request;
+    if (window.XMLHttpRequest) {
+        request = new XMLHttpRequest(); //发送 Ajax 请求，适用于 Chrome, mozilla 等浏览器 
+    } else if (window.ActiveXObject) {
+        request = new ActiveXObject("Microsoft.XMLHTTP"); // 发送 Ajax 请求，适用于 IE 浏览器 
+    }
+    request.onreadystatechange = function () {
+        if (request.readyState == 4) {
+            var jsonObj = JSON.parse(request.responseText); // 解析 JSON 数据
+            alert(jsonObj.test1);
+        }
+    }
+    request.open("get", url, true);
+    request.send();
+}
 $(document).ready(function () {
     torrentTime();
-    function load() {
-        var url = "download.json"; // 获取 JSON 数据的链接
-        var request;
-        if (window.XMLHttpRequest) {
-            request = new XMLHttpRequest(); //发送 Ajax 请求，适用于 Chrome, mozilla 等浏览器 
-        } else if (window.ActiveXObject) {
-            request = new ActiveXObject("Microsoft.XMLHTTP"); // 发送 Ajax 请求，适用于 IE 浏览器 
-        }
-        request.onreadystatechange = function () {
-            if (request.readyState == 4) {
-                var jsonObj = JSON.parse(request.responseText); // 解析 JSON 数据
-                alert(jsonObj.test1);
-            }
-        }
-        request.open("get", url, true);
-        request.send();
-    }
+    load();
     $("#downloadMethod1").removeClass("button");
     $("#downloadMethod1").addClass("buttonDisabled");
     $("#downloadMethod1").click(function () {
