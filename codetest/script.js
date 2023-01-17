@@ -37,7 +37,7 @@ function downloadSet(method) {
                     downloadMethods[i].innerHTML = "BT种子";
                     downloadMethods[i].href = jsonObj.download[i].bt;
                     downloadMethods[i].className = "button";
-                    //downloadMethods[i].getAttributeNode("target").value = "_self";
+                    downloadMethods[i].style.textAlign = "center";
                 }
             }
             if (method == 1) {
@@ -45,7 +45,7 @@ function downloadSet(method) {
                     downloadMethods[i].innerHTML = "度盘秒传";
                     downloadMethods[i].href = jsonObj.download[i].baidu;
                     downloadMethods[i].className = "link";
-                    //downloadMethods[i].getAttributeNode("target").value = "_blank";
+                    downloadMethods[i].style.textAlign = "center";
                 }
             }
         }
