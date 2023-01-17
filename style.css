@@ -41,6 +41,15 @@ a.button:active {
     transition-duration: 0.1s;
     background: red;
 }
+a.buttonDisabled:link,a.buttonDisabled:visited,a.buttonDisabled:hover,a.buttonDisabled:active {
+    text-decoration: none;
+    border-radius: 5px;
+    background: rgb(255, 100, 183); 
+    color: white;
+    padding: 10px;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 .main {
     width: 1000px;
     height: 100px;
