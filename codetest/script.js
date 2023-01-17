@@ -32,16 +32,20 @@ function downloadSet(method) {
         if (request.readyState == 4) {
             var jsonObj = JSON.parse(request.responseText);
             var downloadMethods = document.getElementsByName("download");
+            if (method == 0) {
+                for (var i = 0; i < downloadMethods.length; i++) {
+                    downloadMethods[i].innerHTML = "BT种子";
+                    downloadMethods[i].href = jsonObj.download[i].bt;
+                    downloadMethods[i].className = "button";
+                    downloadMethods[i].getAttributeNode("target").value = "_self";
+                }
+            }
             if (method == 1) {
                 for (var i = 0; i < downloadMethods.length; i++) {
                     downloadMethods[i].innerHTML = "度盘秒传";
                     downloadMethods[i].href = jsonObj.download[i].baidu;
-                }
-            }
-            if (method == 0) {
-                for (var i = 0; i < downloadMethods.length; i++) {
-                    downloadMethods[i].innerHTML = "下载";
-                    downloadMethods[i].href = jsonObj.download[i].bt;
+                    downloadMethods[i].className = "link";
+                    downloadMethods[i].getAttributeNode("target").value = "_blank";
                 }
             }
         }
