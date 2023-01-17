@@ -63,7 +63,12 @@ $(document).ready(function () {
         $("#downloadMethod2").addClass("button");
         downloadSet(0);
     });
+    var alert01 = true;
     $("#downloadMethod2").click(function () {
+        if (alert01 == true) {
+            alert("不要在线解压！\n不要在线解压！\n不要在线解压！");
+            alert01 = false;
+        }
         $(this).addClass("buttonDisabled");
         $(this).removeClass("button");
         $("#downloadMethod1").removeClass("buttonDisabled");
