@@ -33,7 +33,7 @@ function downloadSet(method) {
             var jsonObj = JSON.parse(request.responseText);
             var downloadMethods = document.getElementsByName("download");
             if (method == 0) {
-                for (var i = 0; i < downloadMethods.length; i++) {
+                for (var i = 0; i < 999; i++) {
                     downloadMethods[i].innerHTML = "BT种子";
                     downloadMethods[i].href = jsonObj.download[i].bt;
                     downloadMethods[i].className = "button";
@@ -41,7 +41,7 @@ function downloadSet(method) {
                 }
             }
             if (method == 1) {
-                for (var i = 0; i < downloadMethods.length; i++) {
+                for (var i = 0; i < 999; i++) {
                     downloadMethods[i].innerHTML = "度盘秒传";
                     downloadMethods[i].href = jsonObj.download[i].baidu;
                     downloadMethods[i].className = "link";
