@@ -1,15 +1,3 @@
-function sayhuahuo() {
-    var message = confirm("请遵守网络秩序，注意自己的言行。");
-    var sayhuahuo = document.getElementById("sayhuahuo");
-    if (message == true) {
-        sayhuahuo.onclick = "null";
-        sayhuahuo.innerHTML = "https://www.sayhuahuo.xyz/";
-        sayhuahuo.href = "https://www.sayhuahuo.xyz/";
-    }
-    else if (message == false) {
-        window.close();
-    }
-}
 function torrentTime() {
     var timeNow = new Date().getHours();
     var torrentStatus = document.getElementById("torrent");
@@ -56,6 +44,22 @@ $(document).ready(function () {
     $("#downloadMethod1").removeClass("button");
     $("#downloadMethod1").addClass("buttonDisabled");
     downloadSet(0);
+    var alert02 = true;
+    $("#sayhuahuo").click(function () {
+        if (alert02 == true) {
+            alert("请遵守网络秩序，注意自己的言行。");
+            alert02 = false;
+        }
+        $(this).attr({ "href": "https://www.sayhuahuo.xyz/" });
+        $(this).removeClass("text");
+        $(this).addClass("link");
+        $(this).mouseenter(function () {
+            $(this).text("https://www.sayhuahuo.xyz/");
+        });
+        $(this).mouseleave(function () {
+            $(this).text("花火学园");
+        });
+    });
     $("#downloadMethod1").click(function () {
         $(this).addClass("buttonDisabled");
         $(this).removeClass("button");
