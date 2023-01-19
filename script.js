@@ -48,6 +48,7 @@ $(document).ready(function () {
     $("#sayhuahuo").click(function () {
         if (alert02 == true) {
             alert("请遵守网络秩序，注意自己的言行。");
+            alert("压缩包密码：say花火\n（英文全小写，“花火”为中文，WinRAR点击“显示密码”即可输入中文，不要输入括号中内容）");
             alert02 = false;
         }
         $(this).attr({ "href": "https://www.sayhuahuo.xyz/" });
