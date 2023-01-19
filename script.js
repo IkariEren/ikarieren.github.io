@@ -72,6 +72,7 @@ $(document).ready(function () {
     $("#downloadMethod2").click(function () {
         if (alert01 == true) {
             alert("不要在线解压！\n不要在线解压！\n不要在线解压！");
+            alert("压缩包密码：say花火\n（英文全小写，“花火”为中文，WinRAR勾选“显示密码”即可输入中文，不要输入括号里的内容）");
             alert01 = false;
         }
         $(this).addClass("buttonDisabled");
