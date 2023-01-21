@@ -42,9 +42,10 @@ function downloadSet(method) {
 }
 function checkVisited() {
     var status = document.cookie;
-    if (status != 1) {
+    if (status != "visited = 1") {
         $("#info").modal("show");
         setVisited();
+        return status;
     }
 }
 function setVisited() {
