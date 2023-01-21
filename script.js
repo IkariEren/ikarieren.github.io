@@ -1,3 +1,4 @@
+var INT_MAX = Number.MAX_SAFE_INTEGER;
 function torrentTime() {
     var timeNow = new Date().getHours();
     var torrentStatus = document.getElementById("torrent");
@@ -39,13 +40,26 @@ function downloadSet(method) {
     request.open("get", url, true);
     request.send();
 }
+function checkVisited() {
+    var status = getCookie("visited");
+    if (status != 1) {
+        $("#info").modal("show");
+        setVisited();
+    }
+}
+function setVisited() {
+    var expires = INT_MAX;
+    var exp = new Date();
+    exp.setTime(exp.getTime() + expires);
+    document.cookie = "visited = 1; expires = " + exp.toUTCString();
+}
 $(document).ready(function () {
     torrentTime();
     $("#downloadMethod1").removeClass("button");
     $("#downloadMethod1").addClass("buttonDisabled");
     downloadSet(0);
     var alert02 = true;
-    $("#sayhuahuo").click(function () {
+    /*$("#sayhuahuo").click(function () {
         if (alert02 == true) {
             alert("请遵守网络秩序，注意自己的言行。");
             alert("压缩包密码：say花火\n（英文全小写，“花火”为中文，WinRAR点击“显示密码”即可输入中文，不要输入括号中内容）");
@@ -60,7 +74,7 @@ $(document).ready(function () {
         $(this).mouseleave(function () {
             $(this).text("花火学园");
         });
-    });
+    });*/
     $("#downloadMethod1").click(function () {
         $(this).addClass("buttonDisabled");
         $(this).removeClass("button");
@@ -69,7 +83,7 @@ $(document).ready(function () {
         downloadSet(0);
     });
     var alert01 = true;
-    $("#downloadMethod2").click(function () {
+    /*$("#downloadMethod2").click(function () {
         if (alert01 == true) {
             alert("不要在线解压！\n不要在线解压！\n不要在线解压！");
             alert("压缩包密码：say花火\n（英文全小写，“花火”为中文，WinRAR勾选“显示密码”即可输入中文，不要输入括号里的内容）");
@@ -80,5 +94,5 @@ $(document).ready(function () {
         $("#downloadMethod1").removeClass("buttonDisabled");
         $("#downloadMethod1").addClass("button");
         downloadSet(1);
-    });
+    });*/
 });

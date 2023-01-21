@@ -1,15 +1,3 @@
-table {
-    border-collapse: collapse;
-}
-table,th,td {
-    border: 2px solid black;
-}
-th,td {
-    padding: 15px;
-}
-th {
-    text-align: center;
-}
 a.link:link,a.link:visited {
     text-decoration: none;
     -webkit-transition-duration: 0.3s; /*Safari*/
@@ -56,17 +44,12 @@ a.text {
     cursor: text;
 }
 .main {
-    width: 1000px;
+    position: absolute;
+    width: 80%;
     height: 100px;
     margin: auto;
-    text-align: left;
-    font-size: large;
-}
-.mylinks {
-    width: 1000px;
-    height: 100px;
-    margin: auto;
-    margin-top: 220px;
+    top: 20px;
+    left: 10%;
     text-align: left;
     font-size: large;
 }
@@ -74,7 +57,7 @@ a.text {
     position: absolute;
     width: 1200px;
     bottom: 0;
-    right: 200px;
+    right: 10%;
     text-align: right;
     font-size: medium;
 }
