@@ -41,7 +41,7 @@ function downloadSet(method) {
     request.send();
 }
 function checkVisited() {
-    var status = getCookie("visited");
+    var status = document.cookie;
     if (status != 1) {
         $("#info").modal("show");
         setVisited();
@@ -83,7 +83,7 @@ $(document).ready(function () {
         downloadSet(0);
     });
     var alert01 = true;
-    /*$("#downloadMethod2").click(function () {
+    $("#downloadMethod2").click(function () {
         if (alert01 == true) {
             alert("不要在线解压！\n不要在线解压！\n不要在线解压！");
             alert("压缩包密码：say花火\n（英文全小写，“花火”为中文，WinRAR勾选“显示密码”即可输入中文，不要输入括号里的内容）");
@@ -94,5 +94,5 @@ $(document).ready(function () {
         $("#downloadMethod1").removeClass("buttonDisabled");
         $("#downloadMethod1").addClass("button");
         downloadSet(1);
-    });*/
+    });
 });
