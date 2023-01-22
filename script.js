@@ -57,6 +57,35 @@ function sayhuahuo() {
     $("#infoModal").modal("hide");
     setTimeout('$("#sayhuahuoModal").modal("show");', 125);
 }
+function start() {
+    checkVisited();
+    torrentTime();
+    $("#downloadMethod1").removeClass("button");
+    $("#downloadMethod1").addClass("buttonDisabled");
+    downloadSet(0);
+    $("#title").click(function () {
+        $("#infoModal").modal("show");
+    });
+    $("#downloadMethod1").click(function () {
+        $(this).addClass("buttonDisabled");
+        $(this).removeClass("button");
+        $("#downloadMethod2").removeClass("buttonDisabled");
+        $("#downloadMethod2").addClass("button");
+        downloadSet(0);
+    });
+    var alert01 = true;
+    $("#downloadMethod2").click(function () {
+        if (alert01 == true) {
+            $("#downloadMethod2Modal").modal("show");
+            alert01 = false;
+        }
+        $(this).addClass("buttonDisabled");
+        $(this).removeClass("button");
+        $("#downloadMethod1").removeClass("buttonDisabled");
+        $("#downloadMethod1").addClass("button");
+        downloadSet(1);
+    });
+}
 /*$(document).ready(function () {
     checkVisited();
     torrentTime();
