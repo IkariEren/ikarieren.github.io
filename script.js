@@ -57,7 +57,7 @@ function sayhuahuo() {
     $("#infoModal").modal("hide");
     setTimeout('$("#sayhuahuoModal").modal("show");', 125);
 }
-function start() {
+/*function start() {
     checkVisited();
     torrentTime();
     $("#downloadMethod1").removeClass("button");
@@ -85,8 +85,8 @@ function start() {
         $("#downloadMethod1").addClass("button");
         downloadSet(1);
     });
-}
-/*$(document).ready(function () {
+}*/
+$(document).ready(function () {
     checkVisited();
     torrentTime();
     $("#downloadMethod1").removeClass("button");
@@ -114,4 +114,4 @@ function start() {
         $("#downloadMethod1").addClass("button");
         downloadSet(1);
     });
-});*/
+});
