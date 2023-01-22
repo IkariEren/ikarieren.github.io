@@ -57,7 +57,7 @@ function sayhuahuo() {
     $("#infoModal").modal("hide");
     setTimeout('$("#sayhuahuoModal").modal("show");', 125);
 }
-$(document).ready(function () {
+/*$(document).ready(function () {
     checkVisited();
     torrentTime();
     $("#downloadMethod1").removeClass("button");
@@ -85,4 +85,4 @@ $(document).ready(function () {
         $("#downloadMethod1").addClass("button");
         downloadSet(1);
     });
-});
+});*/
