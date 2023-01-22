@@ -58,6 +58,7 @@ function sayhuahuo() {
     setTimeout('$("#sayhuahuoModal").modal("show");', 125);
 }
 $(document).ready(function () {
+    checkVisited();
     torrentTime();
     $("#downloadMethod1").removeClass("button");
     $("#downloadMethod1").addClass("buttonDisabled");
