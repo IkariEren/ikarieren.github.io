@@ -8054,8 +8054,8 @@
         }
         if (!this.options.cardView && this.options.showHeader && this.options.height) {
           this.$tableHeader.show();
-          this.resetHeader();
-          padding += this.$header.outerHeight(true) + 1;
+          // this.resetHeader();
+          // padding += this.$header.outerHeight(true) + 1;
         } else {
           this.$tableHeader.hide();
           this.trigger('post-header');
