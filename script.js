@@ -43,9 +43,8 @@ function downloadSet(method) {
 function checkVisited() {
     var status = document.cookie;
     if (status != "visited=1") {
-        $("#info").modal("show");
+        $("#infoModal").modal("show");
         setVisited();
-        return status;
     }
 }
 function setVisited() {
@@ -54,28 +53,18 @@ function setVisited() {
     exp.setTime(exp.getTime() + expires);
     document.cookie = "visited = 1; expires = " + exp.toUTCString();
 }
+function sayhuahuo() {
+    $("#infoModal").modal("hide");
+    setTimeout('$("#sayhuahuoModal").modal("show");', 125);
+}
 $(document).ready(function () {
     torrentTime();
     $("#downloadMethod1").removeClass("button");
     $("#downloadMethod1").addClass("buttonDisabled");
     downloadSet(0);
-    var alert02 = true;
-    /*$("#sayhuahuo").click(function () {
-        if (alert02 == true) {
-            alert("请遵守网络秩序，注意自己的言行。");
-            alert("压缩包密码：say花火\n（英文全小写，“花火”为中文，WinRAR点击“显示密码”即可输入中文，不要输入括号中内容）");
-            alert02 = false;
-        }
-        $(this).attr({ "href": "https://www.sayhuahuo.xyz/" });
-        $(this).removeClass("text");
-        $(this).addClass("link");
-        $(this).mouseenter(function () {
-            $(this).text("https://www.sayhuahuo.xyz/");
-        });
-        $(this).mouseleave(function () {
-            $(this).text("花火学园");
-        });
-    });*/
+    $("#title").click(function () {
+        $("#infoModal").modal("show");
+    });
     $("#downloadMethod1").click(function () {
         $(this).addClass("buttonDisabled");
         $(this).removeClass("button");
@@ -86,8 +75,7 @@ $(document).ready(function () {
     var alert01 = true;
     $("#downloadMethod2").click(function () {
         if (alert01 == true) {
-            alert("不要在线解压！\n不要在线解压！\n不要在线解压！");
-            alert("压缩包密码：say花火\n（英文全小写，“花火”为中文，WinRAR勾选“显示密码”即可输入中文，不要输入括号里的内容）");
+            $("#downloadMethod2Modal").modal("show");
             alert01 = false;
         }
         $(this).addClass("buttonDisabled");
