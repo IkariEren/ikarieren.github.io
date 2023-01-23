@@ -85,8 +85,8 @@ $(document).ready(function () {
         $("#downloadMethod1").addClass("button");
         downloadSet(1);
     });
-    window.onresize = function () {
+    /*window.onresize = function () {
         console.log("resize");
     }
-    window.onresize;
+    window.onresize;*/
 });
