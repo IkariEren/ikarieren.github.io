@@ -2,11 +2,11 @@
     {
         "id": "text1",
         "name": "text2",
-        "device": "text3"
+        "price": "text3"
     },
     {
         "id": "text1",
         "name": "text2",
-        "device": "text3"
+        "price": "text3"
     }
 ]
