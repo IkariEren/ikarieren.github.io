@@ -1,18 +1,18 @@
-a.link:link,a.link:visited {
+.link:link,.link:visited {
     text-decoration: none;
     -webkit-transition-duration: 0.3s; /*Safari*/
     transition-duration: 0.3s;
     color: rgb(255, 100, 183);
 }
-a.link:hover {
+.link:hover {
     color: rgb(255, 0, 136);
 }
-a.link:active {
+.link:active {
     -webkit-transition-duration: 0.1s; /*Safari*/
     transition-duration: 0.1s;
     color: red;
 }
-a.button:link,a.button:visited {
+.button:link,.button:visited {
     text-decoration: none;
     border-radius: 5px;
     background: rgb(255, 100, 183); 
@@ -21,15 +21,15 @@ a.button:link,a.button:visited {
     -webkit-transition-duration: 0.3s; /*Safari*/
     transition-duration: 0.3s;
 }
-a.button:hover {
+.button:hover {
     background: rgb(255, 0, 136);
 }
-a.button:active {
+.button:active {
     -webkit-transition-duration: 0.1s; /*Safari*/
     transition-duration: 0.1s;
     background: red;
 }
-a.buttonDisabled:link,a.buttonDisabled:visited,a.buttonDisabled:hover,a.buttonDisabled:active {
+.buttonDisabled:link,.buttonDisabled:visited,.buttonDisabled:hover,.buttonDisabled:active {
     text-decoration: none;
     border-radius: 5px;
     background: rgb(255, 100, 183); 
@@ -37,6 +37,18 @@ a.buttonDisabled:link,a.buttonDisabled:visited,a.buttonDisabled:hover,a.buttonDi
     padding: 10px;
     opacity: 0.5;
     cursor: not-allowed;
+}
+.onActive {
+    background-color: rgb(255, 100, 183);
+    color: white;
+    -webkit-transition-duration: 0.3s; /*Safari*/
+    transition-duration: 0.3s;
+}
+.onActive:hover {
+    background-color: rgb(255, 0, 136);
+}
+.onActive:active {
+    background-color: red;
 }
 .main {
     position: absolute;
