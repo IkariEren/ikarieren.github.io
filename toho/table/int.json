@@ -19,5 +19,12 @@
         "official": "Comic Market 66",
         "download": "<a class='button' href='th08.torrent' download='th08.torrent' style='padding: 6px;'>下载</a>",
         "chinese": "是"
+    },
+    {
+        "code": "TH09",
+        "name": "东方花映塚",
+        "official": "<a class='link' href='https://store.steampowered.com/app/1420810/__Phantasmagoria_of_Flower_View/' target='_blank'>Steam</a>",
+        "download": "<a class='button' href='th09.torrent' download='th09.torrent' style='padding: 6px;'>下载</a>",
+        "chinese": "是"
     }
 ]
