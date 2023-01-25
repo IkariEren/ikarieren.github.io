@@ -24,31 +24,41 @@ function switchPage(page) {
     if (page == 1) {
         url = 'table/int.json';
         pageNum = 1;
-        $('.page-item').removeClass('onActive');
+        for (var i = 0; i < 4; i++) {
+            document.getElementsByClassName('page-item')[i].removeClass('onActive');
+        }
         $('#page1').addClass('onActive');
     }
     if (page == 2) {
         url = 'table/old.json';
         pageNum = 2;
-        $('.page-item').removeClass('onActive');
+        for (var i = 0; i < 4; i++) {
+            document.getElementsByClassName('page-item')[i].removeClass('onActive');
+        }
         $('#page2').addClass('onActive');
     }
     if (page == 3) {
         url = 'table/float1.json';
         pageNum = 3;
-        $('.page-item').removeClass('onActive');
+        for (var i = 0; i < 4; i++) {
+            document.getElementsByClassName('page-item')[i].removeClass('onActive');
+        }
         $('#page3').addClass('onActive');
     }
     if (page == 4) {
         url = 'table/float2.json';
         pageNum = 4;
-        $('.page-item').removeClass('onActive');
+        for (var i = 0; i < 4; i++) {
+            document.getElementsByClassName('page-item')[i].removeClass('onActive');
+        }
         $('#page4').addClass('onActive');
     }
     if (page == 5) {
         url = 'table/unofficial.json';
         pageNum = 5;
-        $('.page-item').removeClass('onActive');
+        for (var i = 0; i < 4; i++) {
+            document.getElementsByClassName('page-item')[i].removeClass('onActive');
+        }
         $('#page5').addClass('onActive');
     }
     if (page == 'previous' && pageNum >= 2) {
@@ -89,7 +99,7 @@ $(document).ready(function () {
     checkVisited();
     torrentTime();
     switchPage(1);
-    $('#title').c.page-itemck(function () {
+    $('#title').c.page - itemck(function () {
         $('#infoModal').modal('show');
     });
 });
