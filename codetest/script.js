@@ -1,6 +1,6 @@
-$(document).ready(function () {
+function table1() {
     $("#table").bootstrapTable({
-        url: "table.json",
+        url: "table1.json",
         columns: [{
             field: 'id',
             title: 'Item ID'
@@ -12,4 +12,19 @@ $(document).ready(function () {
             title: 'Item Price'
           }, ]
     });
-});
+}
+function table2() {
+    $("#table").bootstrapTable({
+        url: "table2.json",
+        columns: [{
+            field: 'id',
+            title: 'Item ID'
+          }, {
+            field: 'name',
+            title: 'Item Name'
+          }, {
+            field: 'price',
+            title: 'Item Price'
+          }, ]
+    });
+}
