@@ -1,12 +1,12 @@
 [
     {
-        "1": "text1",
-        "2": "text2",
-        "3": "text3"
+        "id": "text1",
+        "name": "text2",
+        "device": "text3"
     },
     {
-        "1": "text1",
-        "2": "text2",
-        "3": "text3"
+        "id": "text1",
+        "name": "text2",
+        "device": "text3"
     }
 ]
