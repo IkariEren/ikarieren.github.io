@@ -1,12 +1,11 @@
-var INT_MAX = Number.MAX_SAFE_INTEGER;
 function torrentTime() {
     var timeNow = new Date().getHours();
-    var torrentStatus = document.getElementById("torrent");
+    var status = document.getElementById("torrent");
     if (timeNow >= 9 && timeNow <= 20) {
-        torrentStatus.innerHTML = "做种状态：做种中";
+        status.innerHTML = "做种状态：做种中";
     }
     else if (timeNow <= 8 || timeNow >= 21) {
-        torrentStatus.innerHTML = "做种状态：未作种";
+        status.innerHTML = "做种状态：未作种";
     }
 }
 function downloadSet(method) {
@@ -30,7 +29,7 @@ function downloadSet(method) {
             }
             if (method == 1) {
                 for (var i = 0; i < downloadMethods.length; i++) {
-                    downloadMethods[i].innerHTML = "度盘秒传";
+                    downloadMethods[i].innerHTML = "秒传链接";
                     downloadMethods[i].href = jsonObj.download[i].baidu;
                     downloadMethods[i].className = "link";
                 }
@@ -48,10 +47,7 @@ function checkVisited() {
     }
 }
 function setVisited() {
-    var expires = INT_MAX;
-    var exp = new Date();
-    exp.setTime(exp.getTime() + expires);
-    document.cookie = "visited = 1; expires = " + exp.toUTCString();
+    document.cookie = "visited = 1;";
 }
 function sayhuahuo() {
     $("#infoModal").modal("hide");

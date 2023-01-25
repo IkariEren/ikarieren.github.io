@@ -1,304 +1,337 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang='zh-CN'>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>东方Project资源站</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../img/ATRI.png">
-    <link rel="icon" type="image/x-icon" href="../img/ATRI.png">
-    <link rel="Bookmark" type="image/x-icon" href="../img/ATRI.png">
-    <link rel="stylesheet" type="text/css" href="../code-src/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../code-src/bootstrap-table.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <script src="../code-src/jquery.js"></script>
-    <script src="../code-src/bootstrap.js"></script>
-    <script src="../code-src/bootstrap-table.js"></script>
-    <script src="../script.js"></script>
+    <link rel='shortcut icon' type='image/x-icon' href='../img/ATRI.png'>
+    <link rel='icon' type='image/x-icon' href='../img/ATRI.png'>
+    <link rel='Bookmark' type='image/x-icon' href='../img/ATRI.png'>
+    <link rel='stylesheet' type='text/css' href='../code-src/bootstrap.css'>
+    <link rel='stylesheet' type='text/css' href='../code-src/bootstrap-table.css'>
+    <link rel='stylesheet' type='text/css' href='../style.css'>
+    <script src='../code-src/jquery.js'></script>
+    <script src='../code-src/bootstrap.js'></script>
+    <script src='../code-src/bootstrap-table.js'></script>
+    <script src='script.js'></script>
 </head>
 <body>
-    <div style="position:absolute; margin-top: 15px; margin-left: 25px;">
-        <a class="button" href="..">&lt;返回主页</a>
+    <div class='main'>
+        <h1 id='title'>东方Project资源站</h1>
+        <br>
+        <p id='torrent'></p>
+        <p id='tohoTitle'><b>01 - 官方整数作&emsp;</b></p>
+        <ul class='pagination justify-content-end' style='position: absolute; top: 122.5px; right: 20px;'>
+            <li class='page-item'><a class='page-link link' href='javascript:void(0);' onclick="switchPage('previous');">＜</a></li>
+            <li class='page-item'><a class='page-link link' href='javascript:void(0);' onclick='switchPage(1);'>1</a></li>
+            <li class='page-item'><a class='page-link link' href='javascript:void(0);' onclick='switchPage(2);'>2</a></li>
+            <li class='page-item'><a class='page-link link' href='javascript:void(0);' onclick='switchPage(3);'>3</a></li>
+            <li class='page-item'><a class='page-link link' href='javascript:void(0);' onclick='switchPage(4);'>4</a></li>
+            <li class='page-item'><a class='page-link link' href='javascript:void(0);' onclick='switchPage(5);'>5</a></li>
+            <li class='page-item'><a class='page-link link' href='javascript:void(0);' onclick="switchPage('next');">＞</a></li>
+        </ul>
+        <table id='table' class='table table-borderd' data-toggle='table'></table>
+        <!--<table id='tableOfficialInt' class='table table-bordered' data-toggle='table' data-height='0'>
+            <thead class='table-dark'>
+                <tr style='text-align: center;'>
+                    <th>游戏编号</th>
+                    <th>游戏名</th>
+                    <th>官方购买地址</th>
+                    <th>下载</th>
+                    <th>汉化</th>
+                </tr>
+            </thead>
+            <tbody style='text-align: center;'>
+                <tr>
+                    <td>TH06</td>
+                    <td>东方红魔乡</td>
+                    <td>Comic Market 62</td>
+                    <td style='width: 150px;'><a class='button' href='th06.torrent' download='th06.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH07</td>
+                    <td>东方妖妖梦</td>
+                    <td>Comic Market 64</td>
+                    <td><a class='button' href='th07.torrent' download='th07.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH08</td>
+                    <td>东方永夜抄</td>
+                    <td>Comic Market 66</td>
+                    <td><a class='button' href='th08.torrent' download='th08.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH09</td>
+                    <td>东方花映塚</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/1420810/__Phantasmagoria_of_Flower_View/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th09.torrent' download='th09.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH10</td>
+                    <td>东方风神录</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/1100140/__Mountain_of_Faith/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th10.torrent' download='th10.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH11</td>
+                    <td>东方地灵殿</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/1100150/__Subterranean_Animism/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th11.torrent' download='th11.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH12</td>
+                    <td>东方星莲船</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/1100160/__Undefined_Fantastic_Object/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th12.torrent' download='th12.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH13</td>
+                    <td>东方神灵庙</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/1043230/__Ten_Desires/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th13.torrent' download='th13.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH14</td>
+                    <td>东方辉针城</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/1043240/__Double_Dealing_Character/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th14.torrent' download='th14.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH15</td>
+                    <td>东方绀珠传</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/937580/__Legacy_of_Lunatic_Kingdom/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th15.torrent' download='th15.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH16</td>
+                    <td>东方天空璋</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/745880/__Hidden_Star_in_Four_Seasons/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th16.torrent' download='th16.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH17</td>
+                    <td>东方鬼形兽</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/1079160/__Wily_Beast_and_Weakest_Creature/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th17.torrent' download='th17.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH18</td>
+                    <td>东方虹龙洞</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/1566410/__Unconnected_Marketeers/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th18.torrent' download='th18.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id='tableOfficialOld' class='table table-bordered' data-toggle='table' data-height='0'>
+            <thead class='table-dark'>
+                <tr style='text-align: center;'>
+                    <th>游戏编号</th>
+                    <th>游戏名</th>
+                    <th>官方购买地址</th>
+                    <th>下载</th>
+                    <th>汉化</th>
+                </tr>
+            </thead>
+            <tbody style='text-align: center;'>
+                <tr>
+                    <td>PC98模拟器</td>
+                    <td>T98 - Next</td>
+                    <td>-</td>
+                    <td><a class='button' href='pc98.torrent' download='pc98.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH01</td>
+                    <td>东方灵异传</td>
+                    <td>Comic Market 52</td>
+                    <td><a class='button' href='th01.torrent' download='th01.torrent' style='padding: 6px;'>下载</a></td>
+                    <td style='color: red;'>否</td>
+                </tr>
+                <tr>
+                    <td>TH02</td>
+                    <td>东方封魔录</td>
+                    <td>Comic Market 52</td>
+                    <td><a class='button' href='th02.torrent' download='th02.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH03</td>
+                    <td>东方梦时空</td>
+                    <td>Comic Market 53</td>
+                    <td><a class='button' href='th03.torrent' download='th03.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH04</td>
+                    <td>东方幻想乡</td>
+                    <td>Comic Market 54</td>
+                    <td><a class='button' href='th04.torrent' download='th04.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH05</td>
+                    <td>东方怪绮谈</td>
+                    <td>Comic Market 55</td>
+                    <td><a class='button' href='th05.torrent' download='th05.torrent' style='padding: 6px;'>下载</a></td>
+                    <td>是</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id='tableOfficialFloatSTG' class='table table-bordered' data-toggle='table' data-height='0'>
+            <thead class='table-dark'>
+                <tr>
+                    <th>游戏编号</th>
+                    <th>游戏名</th>
+                    <th>官方购买地址</th>
+                    <th>下载</th>
+                    <th>汉化</th>
+                </tr>
+            </thead>
+            <tbody style='text-align: center;'>
+                <tr>
+                    <td>TH9.5</td>
+                    <td>东方文花帖</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/1420650/__Shoot_the_Bullet/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th9_5.torrent' download='th9_5.torrent'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH12.5</td>
+                    <td>东方文花帖DS</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/1100170/_/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th12_5.torrent' download='th12_5.torrent'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH12.8</td>
+                    <td>妖精大战争</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/1100180/_/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th12_8.torrent' download='th12_8.torrent'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH14.3</td>
+                    <td>弹幕天邪鬼</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/937570/__Impossible_Spell_Card/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th14_3.torrent' download='th14_3.torrent'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH16.5</td>
+                    <td>秘封噩梦日记</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/924650/__Violet_Detector/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th16_5.torrent' download='th16_5.torrent'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH18.5</td>
+                    <td>弹幕狂们的黑市</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/2097720/_100th_Black_Market/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th18_5.torrent' download='th18_5.torrent'>下载</a></td>
+                    <td>是</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id='tableOfficialFloatFTG' class='table table-bordered' data-toggle='table' data-height='0'>
+            <thead class='table-dark'>
+                <tr>
+                    <th>游戏编号</th>
+                    <th>游戏名</th>
+                    <th>官方购买地址</th>
+                    <th>下载</th>
+                    <th>汉化</th>
+                </tr>
+            </thead>
+            <tbody style='text-align: center;'>
+                <tr>
+                    <td>TH7.5</td>
+                    <td>东方萃梦想</td>
+                    <td>Comic Market 67</td>
+                    <td><a class='button' href='th7_5.torrent' download='th7_5.torrent'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH10.5</td>
+                    <td>东方绯想天</td>
+                    <td>第五回 博丽神社例大祭</td>
+                    <td><a class='button' href='th10_5.torrent' download='th10_5.torrent'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH12.3</td>
+                    <td>东方非想天则</td>
+                    <td>Comic Market 76</td>
+                    <td><a class='button' href='th12_3.torrent' download='th12_3.torrent'>下载</a></td>
+                    <td style='text-align: center; color: red;'>不完整</td>
+                </tr>
+                <tr>
+                    <td>TH13.5</td>
+                    <td>东方心绮楼</td>
+                    <td>第十回 博丽神社例大祭</td>
+                    <td><a class='button' href='th13_5.torrent' download='th13_5.torrent'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH14.5</td>
+                    <td>东方深秘录</td>
+                    <td>第十二回 博丽神社例大祭</td>
+                    <td><a class='button' href='th14_5.torrent' download='th14_5.torrent'>下载</a></td>
+                    <td>是</td>
+                </tr>
+                <tr>
+                    <td>TH15.5</td>
+                    <td>东方凭依华</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/716710/_Antinomy_of_Common_Flowers/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th15_5.torrent' download='th15_5.torrent'>下载</a></td>
+                    <td style='text-align: center; color: red;'>否</td>
+                </tr>
+                <tr>
+                    <td>TH17.5</td>
+                    <td>东方刚欲异闻</td>
+                    <td><a class='link' href='https://store.steampowered.com/app/1440500/_/' target='_blank'>Steam</a></td>
+                    <td><a class='button' href='th17_5.torrent' download='th17_5.torrent'>下载</a></td>
+                    <td style='text-align: center; color: red;'>否</td>
+                </tr>
+            </tbody>
+        </table>-->
+        <br><br><br>
+        <!--<p><b>百度网盘秒传链接（来自<a class='link' href='https://tieba.baidu.com/p/6324027400' target='_blank'>百度贴吧</a>）</b></p>
+        <p><a class='link' href='https://pan.baidu.com/#bdlink=NjkwMjNmNTBlZWU0ZDhiNjdiZmNhYzg3MzA5Nzc2ZWUjNDgxMjMxMiNLb25zaGlu6a2C5b+D5a2X5L2T77yI6Jm56b6Z5rSe55So5Yiw55qE5a2X5L2TIOaOqOiNkOWuieijhe+8iS50dGYKY2UwMGMxMmQ4MzM1YmRmZTNlMjQzNGI3MWM4MDFiMjMjMTAwMTAwMTcjW3RoMDEtMDVdIOaXp+S6lOS9nCjmqKHmi5/lmagr5rGJ5YyW54mIK+aXpeaWh+eJiCkuN3oKMTQzOWFiYWM2MWRiOTNkNDFlNDgwNWYxMTQxNmM3MzIjMjcwMjMyOTc4I1t0aDA2XSDkuJzmlrnnuqLprZTkuaEo5rGJ5YyW54mIKS43egoxMGJmMWY3YTY4MGE0MTg4Nzk4ZjY2ODk0ZDY1ZGYzMyMxNTMzMDQwMSNbdGgwNl0g5Lic5pa557qi6a2U5LmhKOaxieWMlueJiCvml6XmlofniYgrVlDooaXkuIEpLjd6CjI3YmMzMzZmOGYxYzQwMjM2ODUzY2FmZTZiN2Y5NzZmIzIwOTQ5MjgxI1tUSDA2XSDkuJzmlrnnuqLprZTkuaHvvZ7oi7HmlofnibnliKvniYgoU3BlY2lhbCBFbmdsaXNoIFZlcnNpb24gMC4xMGEpLjd6CmIxY2JjYThiYmEwYmZiNWQ1MDFjZmE2ZDc0OGJiNTI4IzQzOTk4MTAxMCNbdGgwN10g5Lic5pa55aaW5aaW5qKmKOaxieWMlueJiCkuN3oKZmFhYWRlMTY3MzljNjAxMThjNTQ4M2VmN2I1YWMyYjQjNDYzNTk5Mjk4I1t0aDA4XSDkuJzmlrnmsLjlpJzmioQo5rGJ5YyW54mIKS43egphOGQ2ZmExYzUzYzZmNTgzYzIwNjc0MzM5YjA1OGViZiM1NTQxNTM1NzAjW3RoMDldIOS4nOaWueiKseaYoOWhmijmsYnljJbniYgr5pel5paH54mIKS43ego1ZmRkMTA0ZDBjMmNmOTM5OTNjMDg3MThhY2UxNWJmYiMxNDkwNjg2MDkjW3RoMDlfNV0g5Lic5pa55paH6Iqx5biWKOaxieWMlueJiCvml6XmlofniYgpLjd6CmU4YTA5ZTA1YTAzNTJiNzE3MWJkOGYzMDZiMjhmOWUzIzQzMzY1OTQxMCNbdGgxMF0g5Lic5pa56aOO56We5b2VKOaxieWMlueJiCvml6XmlofniYgpLjd6CjI2MDk3Yjk0Y2Q5YjdlZjIyNDI2Y2E1ZDgxZTcxM2NhIzM5MTk3MzQ3NCNbdGgxMV0g5Lic5pa55Zyw54G15q6/KOaxieWMlueJiCvml6XmlofniYgpLjd6Cjc0MzIyNDJkODk5ZGRkYTMxYjYyYWExMmY1YzQ2MjQ2IzQzMDAwOTc5NCNbdGgxMl0g5Lic5pa55pif6I6y6Ii5KOaxieWMlueJiCvml6XmlofniYgpLjd6CmZmNmFlMWJmMTc3NzEzZDI4M2Q4Y2RmNTg0MWFmODg2IzE2NDgzNzEyMSNbdGgxMl81XSDkuJzmlrnmlofoirHluJZEUyjmsYnljJbniYgr5pel5paH54mIKS43egoyMzA1MGQxMTQ5Yjc4ODNhNGY4NWJhN2Q1MjI5MjdmMiMyMDU4ODI2NDEjW3RoMTJfOF0g5aaW57K+5aSn5oiY5LqJKOaxieWMlueJiCvml6XmlofniYgpLjd6CjY3M2FjMDk2NWJhN2ZjNzU2MGUxYjY2OTcyNDMwYjk1IzUxNTYyMzcxNCNbdGgxM10g5Lic5pa556We54G15bqZKOaxieWMlueJiCvml6XmlofniYgpLjd6CjA1MmQxMmYwZWFmNzA5NzY3YjdiNDE1NjBjOWI1M2YyIzQ2MjIyNzc0NiNbdGgxNF0g5Lic5pa56L6J6ZKI5Z+OKOaxieWMlueJiCsxLjAwYuaXpeaWh+eJiCkuN3oKNjU2YmJmMWJjMTAyOTFlYWMyYmUzMDZmM2M4MzRkODMjMjU4OTA1NzYxI1t0aDE0XzNdIOW8ueW5leWkqemCqumsvCjmsYnljJbniYgr5pel5paH54mIKS43egpkZmUxMzQ3MGQwMzAyMzUwY2MxMmE2Y2E4MzhjY2YxYSM1NDM2MDY4OTgjW3RoMTVdIOS4nOaWuee7gOePoOS8oCgxLjAwYivmsYnljJbooaXkuIEpLjd6CjA2NTgwY2NkNGQyYjUwYzViODgyMmYxMzFmYjgxNmUyIzU1MTE4Mzg3NSNbdGgxNl0g5Lic5pa55aSp56m655KLKOWFieebmOeahOWuieijheeoi+W6jyvmsYnljJbooaXkuIEpLjd6CmI2MTUwZmJjNzdlOGY1MjViZDBiNzkyMzUwMGE3OTIyIzIzOTM0MTg3MyNbdGgxNl81XSDnp5jlsIHlmanmoqbml6XorrAuN3oKNTAwMGZjMmU1ZmFlODJlN2Y4MjU1ODVlY2MyMjdkOGMjNDg3MTYxMDkwI1t0aDE3XSDkuJzmlrnprLzlvaLlhb0uN3oKZjg1ZjAxYzA2MGNmM2VjYzYyZmVjMjM3ZjdkNDExZTgjNTAwMzc2OTMwI1t0aDE4XSDkuJzmlrnombnpvpnmtJ4uN3oKNTE2NGEwZDk1Zjc3ZmNkODA3MGYzMjM3ZWFlYThkNjcjMTgwOTc0MzgjW+WWteeOicOXVEhCXSB0aDE45Lic5pa56Jm56b6Z5rSeIOaxieWMluihpeS4gS56aXAKMmJmY2JjNmE4ZWU2MzMyNDU5YTM4OTFkNTlkMzMyZDEjMTY0MTU2MTAjW+WWteeOicOXVEhCXeS4nOaWuemsvOW9ouWFveaxieWMluihpeS4gS5yYXI=' target='_blank'>01 - 官方STG作（上海爱丽丝幻乐团）</a></p>
+        <p><a class='link' href='https://pan.baidu.com/#bdlink=MTIxNjMxMzExZTUwOTg4MmYwMjU1ODI2NTZjN2MxMWMjNjA3Mjc2MzIyI1t0aDA3XzVdIOS4nOaWueiQg+aipuaDsyjmsYnljJbniYgr5pel5paH54mIKS43egpmMzkwNTA1MzA0OWFlYzhjOTkxODRhMDNiZGI2Y2E1NSMyNzkxNTE5ODYjW3RoMTBfNV0g5Lic5pa557uv5oOz5aSpKOaxieWMlueJiCvml6XmlofniYgpLjd6CmFmZjNkZjYxMDMyNThhMDllZTRiZDEzMmZjODhmZTFkIzI0OTY2NDQwMSNbdGgxMl8zXSDkuJzmlrnpnZ7mg7PlpKnliJko5rGJ5YyW54mIKS43egoxZDhmOGNjMGVkNjRkOTFlOGEyZWNiNzM4MGUzNmVhYSMzODkzNjU1MDYjW3RoMTNfNV0g5Lic5pa55b+D57uu5qW8KDEuMzPmsYnljJbniYgrMS4zNGLml6XmlofniYgpLjd6CjA0YTAzMGU4MTVlNzkwZDdjYmNhNTdhY2I4ZTQ2MmQ2Izc2NDM5OTUyMiNbdGgxNF81XSDkuJzmlrnmt7Hnp5jlvZUo5a6M5pW05rGJ5YyW54mIK+aXpeaWh+eJiCkuN3oKMGQ4NmJmMGQ5MzE1ZDYzODhmMjliNTRkNGRiY2IyNzAjMTAxNTgwNjUzMCNbdGgxNV81XSDkuJzmlrnlh63kvp3ljY4uN3oKMzVjYzhmYjNlOTcyOWE5MjdjNGM0ZTA5Y2Y3YzMxYWQjMTY5NjUyMTkzI+S4nOaWueWHreS+neWNjnYxLjE5YmV0YeihpeS4gS43eg==' target='_blank'>02 - 官方格斗作（黄昏边境）</a></p>-->
     </div>
-    <div class="main">
-        <h1>东方Project资源站</h1>
-        <hr>
-        <p>东方Project
-        <br>是日本同人游戏社团上海爱丽丝幻乐团所制作的一系列官方游戏及相关作品，以及基于前者由爱好者所创作的二次创作所共同构成的覆盖游戏，动漫，音乐，文学等诸多方面的领域。</p>
-        <p>摘自<a class="link" href="https://thwiki.cc/" target="_blank">THBWiki</a></p>
-        <p id="torrent"></p>
-        <hr>
-        <p><b>官方整数作&emsp;</b></p>
-        <div class="table-responsive">
-            <table class="table table-bordered" data-toggle="table" data-height="406">
-                <thead>
-                    <tr>
-                        <th>游戏编号</th>
-                        <th>游戏名</th>
-                        <th>官方购买地址</th>
-                        <th>下载</th>
-                        <th>汉化</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>TH06</td>
-                        <td>东方红魔乡</td>
-                        <td style="text-align: center;">Comic Market 62</td>
-                        <td><a class="button" name="download" href="th06.torrent" download="th06.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                    <tr>
-                        <td>TH07</td>
-                        <td>东方妖妖梦</td>
-                        <td style="text-align: center;">Comic Market 64</td>
-                        <td><a class="button" name="download" href="th07.torrent" download="th07.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                    <tr>
-                        <td>TH08</td>
-                        <td>东方永夜抄</td>
-                        <td style="text-align: center;">Comic Market 66</td>
-                        <td><a class="button" name="download" href="th08.torrent" download="th08.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                    <tr>
-                        <td>TH09</td>
-                        <td>东方花映塚</td>
-                        <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/1420810/__Phantasmagoria_of_Flower_View/" target="_blank">Steam</a></td>
-                        <td><a class="button" name="download" href="th09.torrent" download="th09.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                    <tr>
-                        <td>TH10</td>
-                        <td>东方风神录</td>
-                        <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/1100140/__Mountain_of_Faith/" target="_blank">Steam</a></td>
-                        <td><a class="button" name="download" href="th10.torrent" download="th10.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                    <tr>
-                        <td>TH11</td>
-                        <td>东方地灵殿</td>
-                        <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/1100150/__Subterranean_Animism/" target="_blank">Steam</a></td>
-                        <td><a class="button" name="download" href="th11.torrent" download="th11.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                    <tr>
-                        <td>TH12</td>
-                        <td>东方星莲船</td>
-                        <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/1100160/__Undefined_Fantastic_Object/" target="_blank">Steam</a></td>
-                        <td><a class="button" name="download" href="th12.torrent" download="th12.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                    <tr>
-                        <td>TH13</td>
-                        <td>东方神灵庙</td>
-                        <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/1043230/__Ten_Desires/" target="_blank">Steam</a></td>
-                        <td><a class="button" name="download" href="th13.torrent" download="th13.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                    <tr>
-                        <td>TH14</td>
-                        <td>东方辉针城</td>
-                        <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/1043240/__Double_Dealing_Character/" target="_blank">Steam</a></td>
-                        <td><a class="button" name="download" href="th14.torrent" download="th14.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                    <tr>
-                        <td>TH15</td>
-                        <td>东方绀珠传</td>
-                        <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/937580/__Legacy_of_Lunatic_Kingdom/" target="_blank">Steam</a></td>
-                        <td><a class="button" name="download" href="th15.torrent" download="th15.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                    <tr>
-                        <td>TH16</td>
-                        <td>东方天空璋</td>
-                        <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/745880/__Hidden_Star_in_Four_Seasons/" target="_blank">Steam</a></td>
-                        <td><a class="button" name="download" href="th16.torrent" download="th16.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                    <tr>
-                        <td>TH17</td>
-                        <td>东方鬼形兽</td>
-                        <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/1079160/__Wily_Beast_and_Weakest_Creature/" target="_blank">Steam</a></td>
-                        <td><a class="button" name="download" href="th17.torrent" download="th17.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                    <tr>
-                        <td>TH18</td>
-                        <td>东方虹龙洞</td>
-                        <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/1566410/__Unconnected_Marketeers/" target="_blank">Steam</a></td>
-                        <td><a class="button" name="download" href="th18.torrent" download="th18.torrent">下载</a></td>
-                        <td style="text-align: center;">是</td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class='modal fade' id='infoModal'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <h4 class='modal-title'>什么是东方Project？</h4>
+                    <button type='button' class='btn-close' data-bs-dismiss='modal'></button>
+                </div>
+                <div class='modal-body'>
+                    <p>东方Project是日本同人游戏社团上海爱丽丝幻乐团所制作的一系列同人游戏、相关作品，以及基于前者由爱好者所创作的二次创作所共同构成的覆盖游戏，动漫，音乐，文学等诸多方面的领域。</p>
+                    <p>本站即为东方Project官方游戏与其同人游戏的BT种子下载站。</p>
+                    <p>对了解东方Project有用的链接：</p>
+                    <p><a class='link' href='https://thwiki.cc/' target='_blank'>THBWiki</a></p>
+                    <p><a class='link' href='https://cn.thdog.moe/' target='_blank'>东方狗下载站</a></p>
+                    <p><a class='link' href='https://tieba.baidu.com/p/6324027400' target='_blank'>百度贴吧相关资源</a></p>
+                </div>
+                <div class='modal-footer'>
+                    <a class='button' href='javascript:void(0);' data-bs-dismiss='modal' style='padding: 8px 10px;'>关闭</a>
+                </div>
+            </div>
         </div>
-        <p><b>官方旧作&emsp;<a class="link" href="pc98.torrent" download="pc98.torrent">下载PC98模拟器（内附教程）</a></b></p>
-        <table>
-            <tr>
-                <th>游戏编号</th>
-                <th>游戏名</th>
-                <th>官方购买地址</th>
-                <th>下载</th>
-                <th>汉化</th>
-            </tr>
-            <tr>
-                <td>TH01</td>
-                <td>东方灵异传</td>
-                <td style="text-align: center;">Comic Market 52</td>
-                <td><a class="button" name="download" href="th01.torrent" download="th01.torrent">下载</a></td>
-                <td style="text-align: center; color: red;">否</td>
-            </tr>
-            <tr>
-                <td>TH02</td>
-                <td>东方封魔录</td>
-                <td style="text-align: center;">Comic Market 52</td>
-                <td><a class="button" name="download" href="th02.torrent" download="th02.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-            <tr>
-                <td>TH03</td>
-                <td>东方梦时空</td>
-                <td style="text-align: center;">Comic Market 53</td>
-                <td><a class="button" name="download" href="th03.torrent" download="th03.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-            <tr>
-                <td>TH04</td>
-                <td>东方幻想乡</td>
-                <td style="text-align: center;">Comic Market 54</td>
-                <td><a class="button" name="download" href="th04.torrent" download="th04.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-            <tr>
-                <td>TH05</td>
-                <td>东方怪绮谈</td>
-                <td style="text-align: center;">Comic Market 55</td>
-                <td><a class="button" name="download" href="th05.torrent" download="th05.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-        </table>
-        <p><b>官方小数作（黄昏边境合作FTG）</b></p>
-        <table>
-            <tr>
-                <th>游戏编号</th>
-                <th>游戏名</th>
-                <th>官方购买地址</th>
-                <th>下载</th>
-                <th>汉化</th>
-            </tr>
-            <tr>
-                <td>TH7.5</td>
-                <td>东方萃梦想</td>
-                <td style="text-align: center;">Comic Market 67</td>
-                <td><a class="button" name="download" href="th7_5.torrent" download="th7_5.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-            <tr>
-                <td>TH10.5</td>
-                <td>东方绯想天</td>
-                <td style="text-align: center;">第五回 博丽神社例大祭</td>
-                <td><a class="button" name="download" href="th10_5.torrent" download="th10_5.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-            <tr>
-                <td>TH12.3</td>
-                <td>东方非想天则</td>
-                <td style="text-align: center;">Comic Market 76</td>
-                <td><a class="button" name="download" href="th12_3.torrent" download="th12_3.torrent">下载</a></td>
-                <td style="text-align: center; color: red;">不完整</td>
-            </tr>
-            <tr>
-                <td>TH13.5</td>
-                <td>东方心绮楼</td>
-                <td style="text-align: center;">第十回 博丽神社例大祭</td>
-                <td><a class="button" name="download" href="th13_5.torrent" download="th13_5.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-            <tr>
-                <td>TH14.5</td>
-                <td>东方深秘录</td>
-                <td style="text-align: center;">第十二回 博丽神社例大祭</td>
-                <td><a class="button" name="download" href="th14_5.torrent" download="th14_5.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-            <tr>
-                <td>TH15.5</td>
-                <td>东方凭依华</td>
-                <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/716710/_Antinomy_of_Common_Flowers/" target="_blank">Steam</a></td>
-                <td><a class="button" name="download" href="th15_5.torrent" download="th15_5.torrent">下载</a></td>
-                <td style="text-align: center; color: red;">否</td>
-            </tr>
-            <tr>
-                <td>TH17.5</td>
-                <td>东方刚欲异闻</td>
-                <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/1440500/_/" target="_blank">Steam</a></td>
-                <td><a class="button" name="download" href="th17_5.torrent" download="th17_5.torrent">下载</a></td>
-                <td style="text-align: center; color: red;">否</td>
-            </tr>
-        </table>
-        <p><b>官方小数作（STG）</b></p>
-        <table>
-            <tr>
-                <th>游戏编号</th>
-                <th>游戏名</th>
-                <th>官方购买地址</th>
-                <th>下载</th>
-                <th>汉化</th>
-            </tr>
-            <tr>
-                <td>TH9.5</td>
-                <td>东方文花帖</td>
-                <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/1420650/__Shoot_the_Bullet/" target="_blank">Steam</a></td>
-                <td><a class="button" name="download" href="th9_5.torrent" download="th9_5.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-            <tr>
-                <td>TH12.5</td>
-                <td>东方文花帖DS</td>
-                <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/1100170/_/" target="_blank">Steam</a></td>
-                <td><a class="button" name="download" href="th12_5.torrent" download="th12_5.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-            <tr>
-                <td>TH12.8</td>
-                <td>妖精大战争</td>
-                <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/1100180/_/" target="_blank">Steam</a></td>
-                <td><a class="button" name="download" href="th12_8.torrent" download="th12_8.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-            <tr>
-                <td>TH14.3</td>
-                <td>弹幕天邪鬼</td>
-                <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/937570/__Impossible_Spell_Card/" target="_blank">Steam</a></td>
-                <td><a class="button" name="download" href="th14_3.torrent" download="th14_3.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-            <tr>
-                <td>TH16.5</td>
-                <td>秘封噩梦日记</td>
-                <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/924650/__Violet_Detector/" target="_blank">Steam</a></td>
-                <td><a class="button" name="download" href="th16_5.torrent" download="th16_5.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-            <tr>
-                <td>TH18.5</td>
-                <td>弹幕狂们的黑市</td>
-                <td style="text-align: center;"><a class="link" href="https://store.steampowered.com/app/2097720/_100th_Black_Market/" target="_blank">Steam</a></td>
-                <td><a class="button" name="download" href="th18_5.torrent" download="th18_5.torrent">下载</a></td>
-                <td style="text-align: center;">是</td>
-            </tr>
-        </table>
-        <p><b>百度网盘秒传链接（来自<a class="link" href="https://tieba.baidu.com/p/6324027400" target="_blank">百度贴吧</a>）</b></p>
-        <p><a class="link" href="https://pan.baidu.com/#bdlink=NjkwMjNmNTBlZWU0ZDhiNjdiZmNhYzg3MzA5Nzc2ZWUjNDgxMjMxMiNLb25zaGlu6a2C5b+D5a2X5L2T77yI6Jm56b6Z5rSe55So5Yiw55qE5a2X5L2TIOaOqOiNkOWuieijhe+8iS50dGYKY2UwMGMxMmQ4MzM1YmRmZTNlMjQzNGI3MWM4MDFiMjMjMTAwMTAwMTcjW3RoMDEtMDVdIOaXp+S6lOS9nCjmqKHmi5/lmagr5rGJ5YyW54mIK+aXpeaWh+eJiCkuN3oKMTQzOWFiYWM2MWRiOTNkNDFlNDgwNWYxMTQxNmM3MzIjMjcwMjMyOTc4I1t0aDA2XSDkuJzmlrnnuqLprZTkuaEo5rGJ5YyW54mIKS43egoxMGJmMWY3YTY4MGE0MTg4Nzk4ZjY2ODk0ZDY1ZGYzMyMxNTMzMDQwMSNbdGgwNl0g5Lic5pa557qi6a2U5LmhKOaxieWMlueJiCvml6XmlofniYgrVlDooaXkuIEpLjd6CjI3YmMzMzZmOGYxYzQwMjM2ODUzY2FmZTZiN2Y5NzZmIzIwOTQ5MjgxI1tUSDA2XSDkuJzmlrnnuqLprZTkuaHvvZ7oi7HmlofnibnliKvniYgoU3BlY2lhbCBFbmdsaXNoIFZlcnNpb24gMC4xMGEpLjd6CmIxY2JjYThiYmEwYmZiNWQ1MDFjZmE2ZDc0OGJiNTI4IzQzOTk4MTAxMCNbdGgwN10g5Lic5pa55aaW5aaW5qKmKOaxieWMlueJiCkuN3oKZmFhYWRlMTY3MzljNjAxMThjNTQ4M2VmN2I1YWMyYjQjNDYzNTk5Mjk4I1t0aDA4XSDkuJzmlrnmsLjlpJzmioQo5rGJ5YyW54mIKS43egphOGQ2ZmExYzUzYzZmNTgzYzIwNjc0MzM5YjA1OGViZiM1NTQxNTM1NzAjW3RoMDldIOS4nOaWueiKseaYoOWhmijmsYnljJbniYgr5pel5paH54mIKS43ego1ZmRkMTA0ZDBjMmNmOTM5OTNjMDg3MThhY2UxNWJmYiMxNDkwNjg2MDkjW3RoMDlfNV0g5Lic5pa55paH6Iqx5biWKOaxieWMlueJiCvml6XmlofniYgpLjd6CmU4YTA5ZTA1YTAzNTJiNzE3MWJkOGYzMDZiMjhmOWUzIzQzMzY1OTQxMCNbdGgxMF0g5Lic5pa56aOO56We5b2VKOaxieWMlueJiCvml6XmlofniYgpLjd6CjI2MDk3Yjk0Y2Q5YjdlZjIyNDI2Y2E1ZDgxZTcxM2NhIzM5MTk3MzQ3NCNbdGgxMV0g5Lic5pa55Zyw54G15q6/KOaxieWMlueJiCvml6XmlofniYgpLjd6Cjc0MzIyNDJkODk5ZGRkYTMxYjYyYWExMmY1YzQ2MjQ2IzQzMDAwOTc5NCNbdGgxMl0g5Lic5pa55pif6I6y6Ii5KOaxieWMlueJiCvml6XmlofniYgpLjd6CmZmNmFlMWJmMTc3NzEzZDI4M2Q4Y2RmNTg0MWFmODg2IzE2NDgzNzEyMSNbdGgxMl81XSDkuJzmlrnmlofoirHluJZEUyjmsYnljJbniYgr5pel5paH54mIKS43egoyMzA1MGQxMTQ5Yjc4ODNhNGY4NWJhN2Q1MjI5MjdmMiMyMDU4ODI2NDEjW3RoMTJfOF0g5aaW57K+5aSn5oiY5LqJKOaxieWMlueJiCvml6XmlofniYgpLjd6CjY3M2FjMDk2NWJhN2ZjNzU2MGUxYjY2OTcyNDMwYjk1IzUxNTYyMzcxNCNbdGgxM10g5Lic5pa556We54G15bqZKOaxieWMlueJiCvml6XmlofniYgpLjd6CjA1MmQxMmYwZWFmNzA5NzY3YjdiNDE1NjBjOWI1M2YyIzQ2MjIyNzc0NiNbdGgxNF0g5Lic5pa56L6J6ZKI5Z+OKOaxieWMlueJiCsxLjAwYuaXpeaWh+eJiCkuN3oKNjU2YmJmMWJjMTAyOTFlYWMyYmUzMDZmM2M4MzRkODMjMjU4OTA1NzYxI1t0aDE0XzNdIOW8ueW5leWkqemCqumsvCjmsYnljJbniYgr5pel5paH54mIKS43egpkZmUxMzQ3MGQwMzAyMzUwY2MxMmE2Y2E4MzhjY2YxYSM1NDM2MDY4OTgjW3RoMTVdIOS4nOaWuee7gOePoOS8oCgxLjAwYivmsYnljJbooaXkuIEpLjd6CjA2NTgwY2NkNGQyYjUwYzViODgyMmYxMzFmYjgxNmUyIzU1MTE4Mzg3NSNbdGgxNl0g5Lic5pa55aSp56m655KLKOWFieebmOeahOWuieijheeoi+W6jyvmsYnljJbooaXkuIEpLjd6CmI2MTUwZmJjNzdlOGY1MjViZDBiNzkyMzUwMGE3OTIyIzIzOTM0MTg3MyNbdGgxNl81XSDnp5jlsIHlmanmoqbml6XorrAuN3oKNTAwMGZjMmU1ZmFlODJlN2Y4MjU1ODVlY2MyMjdkOGMjNDg3MTYxMDkwI1t0aDE3XSDkuJzmlrnprLzlvaLlhb0uN3oKZjg1ZjAxYzA2MGNmM2VjYzYyZmVjMjM3ZjdkNDExZTgjNTAwMzc2OTMwI1t0aDE4XSDkuJzmlrnombnpvpnmtJ4uN3oKNTE2NGEwZDk1Zjc3ZmNkODA3MGYzMjM3ZWFlYThkNjcjMTgwOTc0MzgjW+WWteeOicOXVEhCXSB0aDE45Lic5pa56Jm56b6Z5rSeIOaxieWMluihpeS4gS56aXAKMmJmY2JjNmE4ZWU2MzMyNDU5YTM4OTFkNTlkMzMyZDEjMTY0MTU2MTAjW+WWteeOicOXVEhCXeS4nOaWuemsvOW9ouWFveaxieWMluihpeS4gS5yYXI=" target="_blank">01 - 官方STG作（上海爱丽丝幻乐团）</a></p>
-        <p><a class="link" href="https://pan.baidu.com/#bdlink=MTIxNjMxMzExZTUwOTg4MmYwMjU1ODI2NTZjN2MxMWMjNjA3Mjc2MzIyI1t0aDA3XzVdIOS4nOaWueiQg+aipuaDsyjmsYnljJbniYgr5pel5paH54mIKS43egpmMzkwNTA1MzA0OWFlYzhjOTkxODRhMDNiZGI2Y2E1NSMyNzkxNTE5ODYjW3RoMTBfNV0g5Lic5pa557uv5oOz5aSpKOaxieWMlueJiCvml6XmlofniYgpLjd6CmFmZjNkZjYxMDMyNThhMDllZTRiZDEzMmZjODhmZTFkIzI0OTY2NDQwMSNbdGgxMl8zXSDkuJzmlrnpnZ7mg7PlpKnliJko5rGJ5YyW54mIKS43egoxZDhmOGNjMGVkNjRkOTFlOGEyZWNiNzM4MGUzNmVhYSMzODkzNjU1MDYjW3RoMTNfNV0g5Lic5pa55b+D57uu5qW8KDEuMzPmsYnljJbniYgrMS4zNGLml6XmlofniYgpLjd6CjA0YTAzMGU4MTVlNzkwZDdjYmNhNTdhY2I4ZTQ2MmQ2Izc2NDM5OTUyMiNbdGgxNF81XSDkuJzmlrnmt7Hnp5jlvZUo5a6M5pW05rGJ5YyW54mIK+aXpeaWh+eJiCkuN3oKMGQ4NmJmMGQ5MzE1ZDYzODhmMjliNTRkNGRiY2IyNzAjMTAxNTgwNjUzMCNbdGgxNV81XSDkuJzmlrnlh63kvp3ljY4uN3oKMzVjYzhmYjNlOTcyOWE5MjdjNGM0ZTA5Y2Y3YzMxYWQjMTY5NjUyMTkzI+S4nOaWueWHreS+neWNjnYxLjE5YmV0YeihpeS4gS43eg==" target="_blank">02 - 官方格斗作（黄昏边境）</a></p>
     </div>
-    <div class="about" style="bottom: -2150px">
-        <p>Bilibili：<a class="link" href="https://space.bilibili.com/409573857" target="_blank">409573857</a></p>
-        <p>QQ：<a class="link" href="tencent://message/?uin=2469938295" target="_blank">2469938295</a></p>
-        <p>网页 by Ikari_Eren</p>
-    </div>
-    <script src="../script.js"></script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+[
+    {
+        "code": "TH06",
+        "name": "东方红魔乡",
+        "official": "Comic Market 62",
+        "download": "<a class='button' href='th06.torrent' download='th06.torrent' style='padding: 6px;'>下载</a>",
+        "chinese": "是"
+    },
+    {
+        "code": "TH07",
+        "name": "东方妖妖梦",
+        "official": "Comic Market 64",
+        "download": "<a class='button' href='th07.torrent' download='th07.torrent' style='padding: 6px;'>下载</a>",
+        "chinese": "是"
+    },
+    {
+        "code": "TH08",
+        "name": "东方永夜抄",
+        "official": "Comic Market 66",
+        "download": "<a class='button' href='th08.torrent' download='th08.torrent' style='padding: 6px;'>下载</a>",
+        "chinese": "是"
+    }
+]
