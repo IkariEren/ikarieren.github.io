@@ -24,21 +24,18 @@ function downloadSet(method) {
                 for (var i = 0; i < downloadMethods.length; i++) {
                     downloadMethods[i].innerHTML = 'BT种子';
                     downloadMethods[i].href = jsonObj.download[i].bt;
-                    downloadMethods[i].className = 'button btn';
                 }
             }
             if (method == 2) {
                 for (var i = 0; i < downloadMethods.length; i++) {
-                    downloadMethods[i].innerHTML = '秒传链接';
+                    downloadMethods[i].innerHTML = '一键秒传';
                     downloadMethods[i].href = jsonObj.download[i].bdlink;
-                    downloadMethods[i].className = 'link';
                 }
             }
             if (method == 3) {
                 for (var i = 0; i < downloadMethods.length; i++) {
                     downloadMethods[i].innerHTML = '百度网盘';
                     downloadMethods[i].href = jsonObj.download[i].bdshare;
-                    downloadMethods[i].className = 'link';
                 }
             }
         }

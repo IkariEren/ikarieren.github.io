@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -15,15 +16,16 @@
     <script src='../code-src/bootstrap-table.js'></script>
     <script src='script.js'></script>
 </head>
+
 <body>
-    <div class='main'>
+    <main>
         <h1 id='title'>Galgame资源站</h1>
         <br>
         <p id='torrent'></p>
         <p>
             下载方式：
             <button type='button' class='button btn' id='downloadMethod1'>BT种子</button>&nbsp;
-            <button type='button' class='button btn' id='downloadMethod2'>秒传链接</button>&nbsp;
+            <button type='button' class='button btn' id='downloadMethod2'>一键秒传</button>&nbsp;
             <button type='button' class='button btn' id='downloadMethod3'>百度网盘</button>
         </p>
         <div class='table-responsive'>
@@ -42,9 +44,12 @@
                 <tbody>
                     <tr>
                         <td>爱上火车 -Last Run-</td>
-                        <td><div style='color: red;' title='俗称Lost（已解散）'>Lose</div></td>
+                        <td>
+                            <div style='color: red;' title='俗称Lost（已解散）'>Lose</div>
+                        </td>
                         <td>官方</td>
-                        <td style='text-align: center; width: 146px;'><a name='download' class='button btn' href='javascript:void(0);' target='_blank' style='padding: 2px 6px;'>下载</a></td>
+                        <td style='text-align: center; width: 110px;'><a name='download' class='link' href='javascript:void(0);'
+                                target='_blank'>下载</a></td>
                         <td style='text-align: center;'>KRKR</td>
                         <td style='text-align: center;'>是</td>
                         <td style='text-align: center;'>是</td>
@@ -53,7 +58,8 @@
                         <td>永不枯萎的世界与终结之花</td>
                         <td>SWEET&TEA</td>
                         <td>梦恋星空汉化组</td>
-                        <td style='text-align: center;'><a name='download' class='button btn' href='javascript:void(0);' target='_blank' style='padding: 2px 6px;'>下载</a></td>
+                        <td style='text-align: center;'><a name='download' class='link' href='javascript:void(0);'
+                                target='_blank'>下载</a></td>
                         <td style='text-align: center;'>KRKR</td>
                         <td style='text-align: center;'>否</td>
                         <td style='text-align: center;'>是</td>
@@ -62,7 +68,8 @@
                         <td>Fate / Stay Night</td>
                         <td>TYPE-MOON</td>
                         <td>澄空学园</td>
-                        <td style='text-align: center;'><a name='download' class='button btn' href='javascript:void(0);' target='_blank' style='padding: 2px 6px;'>下载</a></td>
+                        <td style='text-align: center;'><a name='download' class='link' href='javascript:void(0);'
+                                target='_blank'>下载</a></td>
                         <td style='text-align: center;'>KRKR</td>
                         <td style='text-align: center;'>否</td>
                         <td style='text-align: center;'>是</td>
@@ -71,7 +78,8 @@
                         <td>星光咖啡馆与死神之蝶</td>
                         <td>YUZUSOFT</td>
                         <td>官方</td>
-                        <td style='text-align: center;'><a name='download' class='button btn' href='javascript:void(0);' target='_blank' style='padding: 2px 6px;'>下载</a></td>
+                        <td style='text-align: center;'><a name='download' class='link' href='javascript:void(0);'
+                                target='_blank'>下载</a></td>
                         <td style='text-align: center;'>KRKR</td>
                         <td style='text-align: center;'>是</td>
                         <td style='text-align: center;'>是</td>
@@ -80,7 +88,8 @@
                         <td>RIDDLE JOKER</td>
                         <td>YUZUSOFT</td>
                         <td>官方</td>
-                        <td style='text-align: center;'><a name='download' class='button btn' href='javascript:void(0);' target='_blank' style='padding: 2px 6px;'>下载</a></td>
+                        <td style='text-align: center;'><a name='download' class='link' href='javascript:void(0);'
+                                target='_blank'>下载</a></td>
                         <td style='text-align: center;'>KRKR</td>
                         <td style='text-align: center;'>是</td>
                         <td style='text-align: center;'>是</td>
@@ -89,7 +98,8 @@
                         <td>千恋万花</td>
                         <td>YUZUSOFT</td>
                         <td>官方</td>
-                        <td style='text-align: center;'><a name='download' class='button btn' href='javascript:void(0);' target='_blank' style='padding: 2px 6px;'>下载</a></td>
+                        <td style='text-align: center;'><a name='download' class='link' href='javascript:void(0);'
+                                target='_blank'>下载</a></td>
                         <td style='text-align: center;'>KRKR</td>
                         <td style='text-align: center;'>是</td>
                         <td style='text-align: center;'>是</td>
@@ -98,7 +108,8 @@
                         <td>魔女的夜宴</td>
                         <td>YUZUSOFT</td>
                         <td>X'moe女装学院</td>
-                        <td style='text-align: center;'><a name='download' class='button btn' href='javascript:void(0);' target='_blank' style='padding: 2px 6px;'>下载</a></td>
+                        <td style='text-align: center;'><a name='download' class='link' href='javascript:void(0);'
+                                target='_blank'>下载</a></td>
                         <td style='text-align: center;'>KRKR</td>
                         <td style='text-align: center;'>否</td>
                         <td style='text-align: center;'>是</td>
@@ -106,8 +117,10 @@
                     <tr>
                         <td>樱之诗</td>
                         <td>枕</td>
-                        <td><a class='link' href='https://space.bilibili.com/88659' target='_blank'>lukibluewell</a></td>
-                        <td style='text-align: center;'><a name='download' class='button btn' href='javascript:void(0);' target='_blank' style='padding: 2px 6px;'>下载</a></td>
+                        <td><a class='link' href='https://space.bilibili.com/88659' target='_blank'>lukibluewell</a>
+                        </td>
+                        <td style='text-align: center;'><a name='download' class='link' href='javascript:void(0);'
+                                target='_blank'>下载</a></td>
                         <td style='text-align: center;'>BGI</td>
                         <td style='text-align: center;'>否</td>
                         <td style='text-align: center;'>是</td>
@@ -116,7 +129,8 @@
                         <td>ATRI -My Dear Moments-</td>
                         <td>FrontWing & 枕</td>
                         <td>官方</td>
-                        <td style='text-align: center;'><a name='download' class='button btn' href='javascript:void(0);' target='_blank' style='padding: 2px 6px;'>下载</a></td>
+                        <td style='text-align: center;'><a name='download' class='link' href='javascript:void(0);'
+                                target='_blank'>下载</a></td>
                         <td style='text-align: center;'>KRKR</td>
                         <td style='text-align: center;'>是</td>
                         <td style='text-align: center;'>否</td>
@@ -124,87 +138,96 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    <div class='modal fade' id='infoModal'>
-        <div class='modal-dialog'>
-            <div class='modal-content'>
-                <div class='modal-header'>
-                    <h4 class='modal-title'>说明</h4>
-                    <button type='button' class='btn-close' data-bs-dismiss='modal'></button>
-                </div>
-                <div class='modal-body'>
-                    <p>本站资源均为种子文件</p>
-                    <p>本站资源均来源于<a class='link' id='sayhuahuo' href='javascript:void(0);' onclick='sayhuahuo();'>花火学园</a></p>
-                    <p>如有侵权行为请告知并删除</p>
-                    <p>对于移动端用户，表格可以上下滑动以查看更多游戏</p>
-                    <p>资源有问题或链接炸了请在<a class='link' href='https://github.com/IkariEren/ikarieren.github.io' target='_blank'>仓库</a>提交<a class='link' href='https://github.com/IkariEren/ikarieren.github.io/issues' target='_blank'>Issue</a></p>
-                    <p>单击标题可再次唤起此模态框</p>
-                </div>
-                <div class='modal-footer'>
-                    <button type='button' class='button btn' data-bs-dismiss='modal'>关闭</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class='modal fade' id='sayhuahuoModal'>
-        <div class='modal-dialog'>
-            <div class='modal-content'>
-                <div class='modal-header'>
-                    <h4 class='modal-title'>忠告</h4>
-                    <button type='button' class='btn-close' data-bs-dismiss='modal'></button>
-                </div>
-                <div class='modal-body'>
-                    <p>请遵守网络秩序，注意自己的言行。</p>
-                </div>
-                <div class='modal-footer'>
-                    <button type='button' class='btn btn-danger' data-bs-dismiss='modal'>不同意</button>
-                    <a href='https://www.sayhuahuo.xyz/' target='_blank'><button type='button' class='btn btn-success' data-bs-dismiss='modal'>我同意</button></a>
+        <div class='modal fade' id='infoModal'>
+            <div class='modal-dialog'>
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <h4 class='modal-title'>说明</h4>
+                        <button type='button' class='btn-close' data-bs-dismiss='modal'></button>
+                    </div>
+                    <div class='modal-body'>
+                        <p>本站资源均为种子文件</p>
+                        <p>本站资源均来源于<a class='link' id='sayhuahuo' href='javascript:void(0);'
+                                onclick='sayhuahuo();'>花火学园</a>
+                        </p>
+                        <p>如有侵权行为请告知并删除</p>
+                        <p>对于移动端用户，表格可以上下滑动以查看更多游戏</p>
+                        <p>资源有问题或链接炸了请在<a class='link' href='https://github.com/IkariEren/ikarieren.github.io'
+                                target='_blank'>仓库</a>提交<a class='link'
+                                href='https://github.com/IkariEren/ikarieren.github.io/issues' target='_blank'>Issue</a>
+                        </p>
+                        <p>单击标题可再次唤起此模态框</p>
+                    </div>
+                    <div class='modal-footer'>
+                        <button type='button' class='button btn' data-bs-dismiss='modal'>关闭</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class='modal fade' id='downloadMethod2Modal'>
-        <div class='modal-dialog'>
-            <div class='modal-content'>
-                <div class='modal-header'>
-                    <h4 class='modal-title'>提示</h4>
-                    <button type='button' class='btn-close' data-bs-dismiss='modal'></button>
-                </div>
-                <div class='modal-body'>
-                    <p>请尽量不要使用在线解压</p>
-                    <p>压缩包密码：say花火</p> 
-                    <p>英文全小写，“花火”为中文；一般勾选“显示密码”即可输入中文</p>
-                </div>
-                <div class='modal-footer'>
-                    <a href='https://mengzonefire.code.misakanet.cn/rapid-upload-userscript-doc/document/Info/%E8%84%9A%E6%9C%AC%E8%AF%B4%E6%98%8E.html' target='_blank'><button type='button' class='btn btn-danger'>什么是秒传？</button></a>
-                    <button type='button' class='btn btn-success' data-bs-dismiss='modal'>我已了解</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class='modal fade' id='downloadMethod3Modal'>
-        <div class='modal-dialog'>
-            <div class='modal-content'>
-                <div class='modal-header'>
-                    <h4 class='modal-title'>提示</h4>
-                    <button type='button' class='btn-close' data-bs-dismiss='modal'></button>
-                </div>
-                <div class='modal-body'>
-                    <p style='color: red;'>不要在线解压！！！</p>
-                    <p style='color: red;'>不要在线解压！！！</p>
-                    <p style='color: red;'>不要在线解压！！！</p>
-                    <p style='color: red;'>本站极不推荐使用此方法</p>
-                    <p style='color: red;'>如果有其它资源保存方法，请不要使用此方法</p>
-                    <p>资源提取码已自动填写</p>
-                    <p>压缩包密码：say花火</p> 
-                    <p>英文全小写，“花火”为中文；一般勾选“显示密码”即可输入中文</p>
-                </div>
-                <div class='modal-footer'>
-                    <a href='how-to-unzip.mp4' target='_blank'><button type='button' class='btn btn-danger'>如何解压缩包？</button></a>
-                    <button type='button' class='btn btn-success' data-bs-dismiss='modal'>我已了解</button>
+        <div class='modal fade' id='sayhuahuoModal'>
+            <div class='modal-dialog'>
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <h4 class='modal-title'>忠告</h4>
+                        <button type='button' class='btn-close' data-bs-dismiss='modal'></button>
+                    </div>
+                    <div class='modal-body'>
+                        <p>请遵守网络秩序，注意自己的言行。</p>
+                    </div>
+                    <div class='modal-footer'>
+                        <button type='button' class='btn btn-danger' data-bs-dismiss='modal'>不同意</button>
+                        <a href='https://www.sayhuahuo.xyz/' target='_blank'><button type='button'
+                                class='btn btn-success' data-bs-dismiss='modal'>我同意</button></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class='modal fade' id='downloadMethod2Modal'>
+            <div class='modal-dialog'>
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <h4 class='modal-title'>提示</h4>
+                        <button type='button' class='btn-close' data-bs-dismiss='modal'></button>
+                    </div>
+                    <div class='modal-body'>
+                        <p>请尽量不要使用在线解压</p>
+                        <p>压缩包密码：say花火</p>
+                        <p>英文全小写，“花火”为中文；一般勾选“显示密码”即可输入中文</p>
+                    </div>
+                    <div class='modal-footer'>
+                        <a href='https://mengzonefire.code.misakanet.cn/rapid-upload-userscript-doc/document/Info/%E8%84%9A%E6%9C%AC%E8%AF%B4%E6%98%8E.html'
+                            target='_blank'><button type='button' class='btn btn-danger'>什么是秒传？</button></a>
+                        <button type='button' class='btn btn-success' data-bs-dismiss='modal'>我已了解</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='modal fade' id='downloadMethod3Modal'>
+            <div class='modal-dialog'>
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <h4 class='modal-title'>提示</h4>
+                        <button type='button' class='btn-close' data-bs-dismiss='modal'></button>
+                    </div>
+                    <div class='modal-body'>
+                        <p style='color: red;'>不要在线解压！！！</p>
+                        <p style='color: red;'>不要在线解压！！！</p>
+                        <p style='color: red;'>不要在线解压！！！</p>
+                        <p style='color: red;'>本站极不推荐使用此方法</p>
+                        <p style='color: red;'>如果有其它资源保存方法，请不要使用此方法</p>
+                        <p>资源提取码已自动填写</p>
+                        <p>压缩包密码：say花火</p>
+                        <p>英文全小写，“花火”为中文；一般勾选“显示密码”即可输入中文</p>
+                    </div>
+                    <div class='modal-footer'>
+                        <a href='how-to-unzip.mp4' target='_blank'><button type='button'
+                                class='btn btn-danger'>如何解压缩包？</button></a>
+                        <button type='button' class='btn btn-success' data-bs-dismiss='modal'>我已了解</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
