@@ -24,32 +24,22 @@ function switchPage(page) {
     if (page == 1) {
         url = 'table/int.json';
         pageNum = 1;
-        $('#page2, #page3, #page4, #page5').removeClass('onActive');
-        $('#page1').addClass('onActive');
     }
     if (page == 2) {
         url = 'table/old.json';
         pageNum = 2;
-        $('#page1, #page3, #page4, #page5').removeClass('onActive');
-        $('#page2').addClass('onActive');
     }
     if (page == 3) {
         url = 'table/float1.json';
         pageNum = 3;
-        $('#page1, #page2, #page4, #page5').removeClass('onActive');
-        $('#page3').addClass('onActive');
     }
     if (page == 4) {
         url = 'table/float2.json';
         pageNum = 4;
-        $('#page1, #page2, #page3, #page5').removeClass('onActive');
-        $('#page4').addClass('onActive');
     }
     if (page == 5) {
         url = 'table/unofficial.json';
         pageNum = 5;
-        $('#page1, #page2, #page3, #page4').removeClass('onActive');
-        $('#page5').addClass('onActive');
     }
     if (page == 'previous' && pageNum >= 2) {
         switchPage(pageNum - 1);
