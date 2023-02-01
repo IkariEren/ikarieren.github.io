@@ -24,7 +24,7 @@ function downloadSet(method) {
                 for (var i = 0; i < downloadMethods.length; i++) {
                     downloadMethods[i].innerHTML = 'BT种子';
                     downloadMethods[i].href = jsonObj.download[i].bt;
-                    downloadMethods[i].className = 'button';
+                    downloadMethods[i].className = 'button btn';
                 }
             }
             if (method == 2) {
