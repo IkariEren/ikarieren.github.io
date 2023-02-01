@@ -63,16 +63,14 @@ function sayhuahuo() {
 $(document).ready(function () {
     checkVisited();
     torrentTime();
-    $('#downloadMethod1').removeClass('button');
-    $('#downloadMethod1').addClass('buttonDisabled');
+    $('#downloadMethod1').addClass('disabled');
     downloadSet(1);
     $('#title').click(function () {
         $('#infoModal').modal('show');
     });
     $('#downloadMethod1').click(function () {
-        $(this).addClass('buttonDisabled');
-        $(this).removeClass('button');
-        $('#downloadMethod2, #downloadMethod3').removeClass('buttonDisabled');
+        $(this).addClass('disabled');
+        $('#downloadMethod2, #downloadMethod3').removeClass('disabled');
         $('#downloadMethod2, #downloadMethod3').addClass('button');
         downloadSet(1);
     });
@@ -82,9 +80,8 @@ $(document).ready(function () {
             $('#downloadMethod2Modal').modal('show');
             alert01 = false;
         }
-        $(this).addClass('buttonDisabled');
-        $(this).removeClass('button');
-        $('#downloadMethod1, #downloadMethod3').removeClass('buttonDisabled');
+        $(this).addClass('disabled');
+        $('#downloadMethod1, #downloadMethod3').removeClass('disabled');
         $('#downloadMethod1, #downloadMethod3').addClass('button');
         downloadSet(2);
     });
@@ -94,9 +91,8 @@ $(document).ready(function () {
             $('#downloadMethod3Modal').modal('show');
             alert02 = false;
         }
-        $(this).addClass('buttonDisabled');
-        $(this).removeClass('button');
-        $('#downloadMethod1, #downloadMethod2').removeClass('buttonDisabled');
+        $(this).addClass('disabled');
+        $('#downloadMethod1, #downloadMethod2').removeClass('disabled');
         $('#downloadMethod1, #downloadMethod2').addClass('button');
         downloadSet(3);
     });

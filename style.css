@@ -12,31 +12,26 @@
     transition-duration: 0.1s;
     color: red;
 }
-.button:link,.button:visited {
-    text-decoration: none;
-    border-radius: 5px;
+.button,.button:visited {
+    font-size: large;
     background: rgb(255, 100, 183); 
     color: white;
-    padding: 10px;
     -webkit-transition-duration: 0.3s; /*Safari*/
     transition-duration: 0.3s;
 }
 .button:hover {
+    color: white;
     background: rgb(255, 0, 136);
 }
 .button:active {
     -webkit-transition-duration: 0.1s; /*Safari*/
     transition-duration: 0.1s;
-    background: red;
+    color: white !important;
+    background: red !important;
 }
-.buttonDisabled:link,.buttonDisabled:visited,.buttonDisabled:hover,.buttonDisabled:active {
-    text-decoration: none;
-    border-radius: 5px;
-    background: rgb(255, 100, 183); 
-    color: white;
-    padding: 10px;
-    opacity: 0.5;
-    cursor: not-allowed;
+.disabled {
+    background: rgb(255, 100, 183) !important;
+    color: white !important;
 }
 .onActive {
     background-color: rgb(255, 100, 183);
@@ -70,4 +65,12 @@
 }
 #title {
     cursor: help;
+}
+code {
+    display: block;
+    background-color: lightgray;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 10px;
 }
