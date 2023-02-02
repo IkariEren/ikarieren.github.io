@@ -8,6 +8,7 @@ function torrentTime() {
         status.innerHTML = '做种状态：未作种';
     }
 }
+var downloadMethod = 1;
 function downloadSet(method) {
     var url = 'download.json';
     var request;
@@ -18,24 +19,43 @@ function downloadSet(method) {
     }
     request.onreadystatechange = function () {
         if (request.readyState == 4) {
-            var jsonObj = JSON.parse(request.responseText);
-            var downloadMethods = document.getElementsByName('download');
+            var json = JSON.parse(request.responseText);
+            var download = document.getElementsByName('download');
             if (method == 1) {
-                for (var i = 0; i < downloadMethods.length; i++) {
-                    downloadMethods[i].innerHTML = 'BT种子';
-                    downloadMethods[i].href = jsonObj.download[i].bt;
+                downloadMethod = 1;
+                for (var i = 0; i < download.length; i++) {
+                    download[i].innerHTML = 'BT种子';
+                    download[i].href = 'javascript:void(0);';
+                    download[i].target = '';
                 }
+                $("a[name='download']").click(function () {
+                    if (downloadMethod == 1) {
+                        document.getElementById('copy').innerHTML = '点我复制';
+                        $('#download-method1-modal').modal('show');
+                        var num = $(this).index("a[name='download']");
+                        document.getElementById('download-method1-bt').href = json.download[num].bt;
+                        $('#download-method1-magnet').click(function () {
+                            $('#download-method1-modal').modal('hide');
+                            setTimeout("$('#download-method1-magnet-modal').modal('show');", 125);
+                            document.getElementById('magnet').innerHTML = json.download[num].magnet;
+                        });
+                    }
+                });
             }
             if (method == 2) {
-                for (var i = 0; i < downloadMethods.length; i++) {
-                    downloadMethods[i].innerHTML = '一键秒传';
-                    downloadMethods[i].href = jsonObj.download[i].bdlink;
+                downloadMethod = 2;
+                for (var i = 0; i < download.length; i++) {
+                    download[i].innerHTML = '一键秒传';
+                    download[i].href = json.download[i].bdlink;
+                    download[i].target = '_blank';
                 }
             }
             if (method == 3) {
-                for (var i = 0; i < downloadMethods.length; i++) {
-                    downloadMethods[i].innerHTML = '百度网盘';
-                    downloadMethods[i].href = jsonObj.download[i].bdshare;
+                downloadMethod = 3;
+                for (var i = 0; i < download.length; i++) {
+                    download[i].innerHTML = '百度网盘';
+                    download[i].href = json.download[i].bdshare;
+                    download[i].target = '_blank';
                 }
             }
         }
@@ -46,7 +66,7 @@ function downloadSet(method) {
 function checkVisited() {
     var status = document.cookie;
     if (status != 'visited=1') {
-        $('#infoModal').modal('show');
+        $('#info-modal').modal('show');
         setVisited();
     }
 }
@@ -54,43 +74,56 @@ function setVisited() {
     document.cookie = 'visited = 1;';
 }
 function sayhuahuo() {
-    $('#infoModal').modal('hide');
-    setTimeout("$('#sayhuahuoModal').modal('show');", 125);
+    $('#info-modal').modal('hide');
+    setTimeout("$('#sayhuahuo-modal').modal('show');", 125);
 }
 $(document).ready(function () {
     checkVisited();
     torrentTime();
-    $('#downloadMethod1').addClass('disabled');
+    $('#download-method1').addClass('disabled');
     downloadSet(1);
     $('#title').click(function () {
-        $('#infoModal').modal('show');
+        $('#info-modal').modal('show');
     });
-    $('#downloadMethod1').click(function () {
+    $('#download-method1').click(function () {
         $(this).addClass('disabled');
-        $('#downloadMethod2, #downloadMethod3').removeClass('disabled');
-        $('#downloadMethod2, #downloadMethod3').addClass('button');
+        $('#download-method2, #download-method3').removeClass('disabled');
+        $('#download-method2, #download-method3').addClass('button');
         downloadSet(1);
     });
     var alert01 = true;
-    $('#downloadMethod2').click(function () {
+    $('#download-method2').click(function () {
         if (alert01 == true) {
-            $('#downloadMethod2Modal').modal('show');
+            $('#download-method2-modal').modal('show');
             alert01 = false;
         }
         $(this).addClass('disabled');
-        $('#downloadMethod1, #downloadMethod3').removeClass('disabled');
-        $('#downloadMethod1, #downloadMethod3').addClass('button');
+        $('#download-method1, #download-method3').removeClass('disabled');
+        $('#download-method1, #download-method3').addClass('button');
         downloadSet(2);
     });
     var alert02 = true;
-    $('#downloadMethod3').click(function () {
+    $('#download-method3').click(function () {
         if (alert02 == true) {
-            $('#downloadMethod3Modal').modal('show');
+            $('#download-method3-modal').modal('show');
             alert02 = false;
         }
         $(this).addClass('disabled');
-        $('#downloadMethod1, #downloadMethod2').removeClass('disabled');
-        $('#downloadMethod1, #downloadMethod2').addClass('button');
+        $('#download-method1, #download-method2').removeClass('disabled');
+        $('#download-method1, #download-method2').addClass('button');
         downloadSet(3);
+    });
+    var clipboard = new ClipboardJS('#copy');
+    clipboard.on('success', function (e) {
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        e.clearSelection();
+        document.getElementById('copy').innerHTML = '已复制';
+    });
+    clipboard.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        document.getElementById('copy').innerHTML = '复制失败';
     });
 });

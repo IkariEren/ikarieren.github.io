@@ -41,6 +41,9 @@
     text-align: right;
     font-size: medium;
 }
+.btn {
+    font-size: large;
+}
 #title {
     cursor: help;
 }
@@ -51,6 +54,7 @@ code {
     border-radius: 5px;
     border: 1px solid gray;
     padding: 10px;
+    font-size:small;
 }
 main {
     position: absolute;
