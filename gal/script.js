@@ -21,19 +21,31 @@ function downloadSet(method) {
         if (request.readyState == 4) {
             var json = JSON.parse(request.responseText);
             var download = document.getElementsByName('download');
+            for (var i = 0; i < download.length; i++) {
+                download[i].href = 'javascript:void(0);';
+                download[i].target = '_self';
+            }
             if (method == 1) {
                 downloadMethod = 1;
                 for (var i = 0; i < download.length; i++) {
                     download[i].innerHTML = 'BT种子';
-                    download[i].href = 'javascript:void(0);';
-                    download[i].target = '';
                 }
                 $("a[name='download']").click(function () {
                     if (downloadMethod == 1) {
-                        document.getElementById('copy').innerHTML = '点我复制';
                         $('#download-method1-modal').modal('show');
+                        document.getElementById('copy').innerHTML = '点我复制';
                         var num = $(this).index("a[name='download']");
                         document.getElementById('download-method1-bt').href = json.download[num].bt;
+                        document.getElementById('alert-game-title-bt').innerHTML = json.download[num].title;
+                        document.getElementById('alert-download-bt').innerHTML = '您将要下载：' + '<code>' + json.download[num].bt + '</code>';
+                        for (var i = 0; i < json.alert.length; i++) {
+                            if (num == json.alert[i].num) {
+                                document.getElementById('alert-text-bt').innerHTML = '说明：<br />' + json.alert[i].text;
+                            }
+                            else {
+                                document.getElementById('alert-text-bt').innerHTML = '';
+                            }
+                        }
                         $('#download-method1-magnet').click(function () {
                             $('#download-method1-modal').modal('hide');
                             setTimeout("$('#download-method1-magnet-modal').modal('show');", 125);
@@ -46,17 +58,47 @@ function downloadSet(method) {
                 downloadMethod = 2;
                 for (var i = 0; i < download.length; i++) {
                     download[i].innerHTML = '一键秒传';
-                    download[i].href = json.download[i].bdlink;
-                    download[i].target = '_blank';
                 }
+                $("a[name='download']").click(function () {
+                    if (downloadMethod == 2) {
+                        $('#alert-modal').modal('show');
+                        var num = $(this).index("a[name='download']");
+                        document.getElementById('jump').href = json.download[num].bdlink;
+                        document.getElementById('alert-game-title').innerHTML = json.download[num].title;
+                        document.getElementById('alert-download').innerHTML = '<p>您将要前往：</p>' + '<code style="display: block">' + json.download[num].bdlink + '</code>';
+                        for (var i = 0; i < json.alert.length; i++) {
+                            if (num == json.alert[i].num) {
+                                document.getElementById('alert-text').innerHTML = '说明：<br />' + json.alert[i].text;
+                            }
+                            else {
+                                document.getElementById('alert-text').innerHTML = '';
+                            }
+                        }
+                    }
+                });
             }
             if (method == 3) {
                 downloadMethod = 3;
                 for (var i = 0; i < download.length; i++) {
                     download[i].innerHTML = '百度网盘';
-                    download[i].href = json.download[i].bdshare;
-                    download[i].target = '_blank';
                 }
+                $("a[name='download']").click(function () {
+                    if (downloadMethod == 3) {
+                        $('#alert-modal').modal('show');
+                        var num = $(this).index("a[name='download']");
+                        document.getElementById('jump').href = json.download[num].bdshare;
+                        document.getElementById('alert-game-title').innerHTML = json.download[num].title;
+                        document.getElementById('alert-download').innerHTML = '<p>您将要前往：</p>' + '<code>' + json.download[num].bdshare + '</code>';
+                        for (var i = 0; i < json.alert.length; i++) {
+                            if (num == json.alert[i].num) {
+                                document.getElementById('alert-text').innerHTML = '说明：<br />' + json.alert[i].text;
+                            }
+                            else {
+                                document.getElementById('alert-text').innerHTML = '';
+                            }
+                        }
+                    }
+                });
             }
         }
     }
