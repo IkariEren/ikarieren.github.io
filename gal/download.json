@@ -29,6 +29,13 @@
             "bdshare": "https://pan.baidu.com/s/1OxRnNsyAZsvNeai7W59zlw?pwd=fate"
         },
         {
+            "title": "月姬 -A piece of blue glass moon-",
+            "bt": "tsuki-hime-remake.torrent",
+            "magnet": "magnet:?xt=urn:btih:2025AEDCF482FF053CD5150A470A199A977E418F&dn=Tsukihime -A piece of blue glass moon- [01001DC01486A000] [v131072] (1G+1U).xci",
+            "bdlink": "https://pan.baidu.com/#bdlink=ZTZhNmZkZWIwZTVhZDRhNjBhYmRmZTRhNmU2MDE5M2IjNDI5NDk2NzI5NiN0c3VraS1oaW1lLXJlbWFrZS5wYXJ0MS5yYXIKNWU2MTQ1MjZjM2JjMzNmZjA2MWIwMzk3ZDEwMjEyNzUjNDI5NDk2NzI5NiN0c3VraS1oaW1lLXJlbWFrZS5wYXJ0Mi5yYXIKMjkzOGYxMTQ5MjVjYTJmYWFmZmU1ZWZkMmNjNjlhMWIjNDI5NDk2NzI5NiN0c3VraS1oaW1lLXJlbWFrZS5wYXJ0NC5yYXIKMmY4YjBiODhjNmRmZDBlMDM1Yzk3NzYxZDU1ODYyMDUjNDI5NDk2NzI5NiN0c3VraS1oaW1lLXJlbWFrZS5wYXJ0My5yYXIKMjNlM2Y1YWMxOGFlNGIzMWY3ZDI0NDYwMjQ4ODM0NjEjNDI5NDk2NzI5NiN0c3VraS1oaW1lLXJlbWFrZS5wYXJ0NS5yYXIKMWY4ZTgwMzIxY2YyMzRhNWM3M2I3OTM4MzVlZTQ0ZTQjMjg0MDQ2NDcwMiN0c3VraS1oaW1lLXJlbWFrZS5wYXJ0Ni5yYXI=",
+            "bdshare": "https://pan.baidu.com/s/1QrZ-NRamPM_YJ0vCX188tw?pwd=moon"
+        },
+        {
             "title": "星光咖啡馆与死神之蝶",
             "bt": "cafe-stella.torrent",
             "magnet": "magnet:?xt=urn:btih:9F75E4DCB2FC96F0F18A6B3F0393A113DAB05C8F&dn=星光咖啡馆与死神之蝶",
@@ -73,8 +80,14 @@
     ],
     "alert": [
         {
-            "num": 2,
-            "text": "该游戏为原版＋语音版（早期测试）<br />如语音版不可运行可以尝试下载sxs.dll至游戏文件夹<br />语音项目官网：<a class='link' href='https://lm.works/portfolio/fate-hollow-ataraxia/' target='_blank'>月海工房</a>"
+            "id": "Fate／Hollow Ataraxia",
+            "text": "该游戏为原版＋语音版（早期测试）<br />如语音版不可运行可以尝试下载sxs.dll至游戏文件夹<br />语音项目官网：<a class='link' href='https://lm.works/portfolio/fate-hollow-ataraxia/' target='_blank'>月海工房</a>",
+            "class": "all"
+        },
+        {
+            "id": "月姬 -A piece of blue glass moon-",
+            "text": "该游戏为Switch平台<br /><a class='link' href='tsuki-hime-remake-chinese.torrent'>点击下载汉化</a><br />游戏ID：01001DC01486A000<br />详情见<a class='link' href='tsuki-hime-remake-tutorial.pdf' target='_blank'>月姬Remake汉化补丁食用手册</a>",
+            "class": 1
         }
     ]
 }

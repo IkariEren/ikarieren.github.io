@@ -11,26 +11,27 @@
     <link rel='stylesheet' type='text/css' href='../code-src/bootstrap-table.css'>
     <link rel='stylesheet' type='text/css' href='../style.css'>
     <script src='../code-src/jquery.js'></script>
-    <script src='../code-src/bootstrap.js'></script>
+    <script src='../code-src/bootstrap.bundle.js'></script>
     <script src='../code-src/bootstrap-table.js'></script>
+    <script src='../code-src/clipboard.js'></script>
     <script src='script.js'></script>
 </head>
 <body>
-    <div class='main'>
+    <main>
         <h1 id='title'>东方Project资源站</h1>
         <br>
         <p id='torrent'></p>
         <p id='tohoTitle'><b>01 - 官方整数作&emsp;</b></p>
         <ul class='pagination justify-content-end' style='position: absolute; top: 122.5px; right: 20px;'>
             <li class='page-item'><a class='page-link link' href='javascript:void(0);' onclick="switchPage('previous');">＜</a></li>
-            <li class='page-item'><a id="page1" class='page-link link' href='javascript:void(0);' onclick='switchPage(1);'>1</a></li>
-            <li class='page-item'><a id="page2" class='page-link link' href='javascript:void(0);' onclick='switchPage(2);'>2</a></li>
-            <li class='page-item'><a id="page3" class='page-link link' href='javascript:void(0);' onclick='switchPage(3);'>3</a></li>
-            <li class='page-item'><a id="page4" class='page-link link' href='javascript:void(0);' onclick='switchPage(4);'>4</a></li>
-            <li class='page-item'><a id="page5" class='page-link link' href='javascript:void(0);' onclick='switchPage(5);'>5</a></li>
+            <li class='page-item'><a id='page1' class='page-link link' href='javascript:void(0);' onclick='switchPage(1);'>1</a></li>
+            <li class='page-item'><a id='page2' class='page-link link' href='javascript:void(0);' onclick='switchPage(2);'>2</a></li>
+            <li class='page-item'><a id='page3' class='page-link link' href='javascript:void(0);' onclick='switchPage(3);'>3</a></li>
+            <li class='page-item'><a id='page4' class='page-link link' href='javascript:void(0);' onclick='switchPage(4);'>4</a></li>
+            <li class='page-item'><a id='page5' class='page-link link' href='javascript:void(0);' onclick='switchPage(5);'>5</a></li>
             <li class='page-item'><a class='page-link link' href='javascript:void(0);' onclick="switchPage('next');">＞</a></li>
         </ul>
-        <table id='table' class='table table-borderd' data-toggle='table'></table>
+        <table id='table' data-toggle='table'></table>
         <!--<table id='tableOfficialInt' class='table table-bordered' data-toggle='table' data-height='0'>
             <thead class='table-dark'>
                 <tr style='text-align: center;'>
@@ -311,27 +312,27 @@
         <!--<p><b>百度网盘秒传链接（来自<a class='link' href='https://tieba.baidu.com/p/6324027400' target='_blank'>百度贴吧</a>）</b></p>
         <p><a class='link' href='https://pan.baidu.com/#bdlink=NjkwMjNmNTBlZWU0ZDhiNjdiZmNhYzg3MzA5Nzc2ZWUjNDgxMjMxMiNLb25zaGlu6a2C5b+D5a2X5L2T77yI6Jm56b6Z5rSe55So5Yiw55qE5a2X5L2TIOaOqOiNkOWuieijhe+8iS50dGYKY2UwMGMxMmQ4MzM1YmRmZTNlMjQzNGI3MWM4MDFiMjMjMTAwMTAwMTcjW3RoMDEtMDVdIOaXp+S6lOS9nCjmqKHmi5/lmagr5rGJ5YyW54mIK+aXpeaWh+eJiCkuN3oKMTQzOWFiYWM2MWRiOTNkNDFlNDgwNWYxMTQxNmM3MzIjMjcwMjMyOTc4I1t0aDA2XSDkuJzmlrnnuqLprZTkuaEo5rGJ5YyW54mIKS43egoxMGJmMWY3YTY4MGE0MTg4Nzk4ZjY2ODk0ZDY1ZGYzMyMxNTMzMDQwMSNbdGgwNl0g5Lic5pa557qi6a2U5LmhKOaxieWMlueJiCvml6XmlofniYgrVlDooaXkuIEpLjd6CjI3YmMzMzZmOGYxYzQwMjM2ODUzY2FmZTZiN2Y5NzZmIzIwOTQ5MjgxI1tUSDA2XSDkuJzmlrnnuqLprZTkuaHvvZ7oi7HmlofnibnliKvniYgoU3BlY2lhbCBFbmdsaXNoIFZlcnNpb24gMC4xMGEpLjd6CmIxY2JjYThiYmEwYmZiNWQ1MDFjZmE2ZDc0OGJiNTI4IzQzOTk4MTAxMCNbdGgwN10g5Lic5pa55aaW5aaW5qKmKOaxieWMlueJiCkuN3oKZmFhYWRlMTY3MzljNjAxMThjNTQ4M2VmN2I1YWMyYjQjNDYzNTk5Mjk4I1t0aDA4XSDkuJzmlrnmsLjlpJzmioQo5rGJ5YyW54mIKS43egphOGQ2ZmExYzUzYzZmNTgzYzIwNjc0MzM5YjA1OGViZiM1NTQxNTM1NzAjW3RoMDldIOS4nOaWueiKseaYoOWhmijmsYnljJbniYgr5pel5paH54mIKS43ego1ZmRkMTA0ZDBjMmNmOTM5OTNjMDg3MThhY2UxNWJmYiMxNDkwNjg2MDkjW3RoMDlfNV0g5Lic5pa55paH6Iqx5biWKOaxieWMlueJiCvml6XmlofniYgpLjd6CmU4YTA5ZTA1YTAzNTJiNzE3MWJkOGYzMDZiMjhmOWUzIzQzMzY1OTQxMCNbdGgxMF0g5Lic5pa56aOO56We5b2VKOaxieWMlueJiCvml6XmlofniYgpLjd6CjI2MDk3Yjk0Y2Q5YjdlZjIyNDI2Y2E1ZDgxZTcxM2NhIzM5MTk3MzQ3NCNbdGgxMV0g5Lic5pa55Zyw54G15q6/KOaxieWMlueJiCvml6XmlofniYgpLjd6Cjc0MzIyNDJkODk5ZGRkYTMxYjYyYWExMmY1YzQ2MjQ2IzQzMDAwOTc5NCNbdGgxMl0g5Lic5pa55pif6I6y6Ii5KOaxieWMlueJiCvml6XmlofniYgpLjd6CmZmNmFlMWJmMTc3NzEzZDI4M2Q4Y2RmNTg0MWFmODg2IzE2NDgzNzEyMSNbdGgxMl81XSDkuJzmlrnmlofoirHluJZEUyjmsYnljJbniYgr5pel5paH54mIKS43egoyMzA1MGQxMTQ5Yjc4ODNhNGY4NWJhN2Q1MjI5MjdmMiMyMDU4ODI2NDEjW3RoMTJfOF0g5aaW57K+5aSn5oiY5LqJKOaxieWMlueJiCvml6XmlofniYgpLjd6CjY3M2FjMDk2NWJhN2ZjNzU2MGUxYjY2OTcyNDMwYjk1IzUxNTYyMzcxNCNbdGgxM10g5Lic5pa556We54G15bqZKOaxieWMlueJiCvml6XmlofniYgpLjd6CjA1MmQxMmYwZWFmNzA5NzY3YjdiNDE1NjBjOWI1M2YyIzQ2MjIyNzc0NiNbdGgxNF0g5Lic5pa56L6J6ZKI5Z+OKOaxieWMlueJiCsxLjAwYuaXpeaWh+eJiCkuN3oKNjU2YmJmMWJjMTAyOTFlYWMyYmUzMDZmM2M4MzRkODMjMjU4OTA1NzYxI1t0aDE0XzNdIOW8ueW5leWkqemCqumsvCjmsYnljJbniYgr5pel5paH54mIKS43egpkZmUxMzQ3MGQwMzAyMzUwY2MxMmE2Y2E4MzhjY2YxYSM1NDM2MDY4OTgjW3RoMTVdIOS4nOaWuee7gOePoOS8oCgxLjAwYivmsYnljJbooaXkuIEpLjd6CjA2NTgwY2NkNGQyYjUwYzViODgyMmYxMzFmYjgxNmUyIzU1MTE4Mzg3NSNbdGgxNl0g5Lic5pa55aSp56m655KLKOWFieebmOeahOWuieijheeoi+W6jyvmsYnljJbooaXkuIEpLjd6CmI2MTUwZmJjNzdlOGY1MjViZDBiNzkyMzUwMGE3OTIyIzIzOTM0MTg3MyNbdGgxNl81XSDnp5jlsIHlmanmoqbml6XorrAuN3oKNTAwMGZjMmU1ZmFlODJlN2Y4MjU1ODVlY2MyMjdkOGMjNDg3MTYxMDkwI1t0aDE3XSDkuJzmlrnprLzlvaLlhb0uN3oKZjg1ZjAxYzA2MGNmM2VjYzYyZmVjMjM3ZjdkNDExZTgjNTAwMzc2OTMwI1t0aDE4XSDkuJzmlrnombnpvpnmtJ4uN3oKNTE2NGEwZDk1Zjc3ZmNkODA3MGYzMjM3ZWFlYThkNjcjMTgwOTc0MzgjW+WWteeOicOXVEhCXSB0aDE45Lic5pa56Jm56b6Z5rSeIOaxieWMluihpeS4gS56aXAKMmJmY2JjNmE4ZWU2MzMyNDU5YTM4OTFkNTlkMzMyZDEjMTY0MTU2MTAjW+WWteeOicOXVEhCXeS4nOaWuemsvOW9ouWFveaxieWMluihpeS4gS5yYXI=' target='_blank'>01 - 官方STG作（上海爱丽丝幻乐团）</a></p>
         <p><a class='link' href='https://pan.baidu.com/#bdlink=MTIxNjMxMzExZTUwOTg4MmYwMjU1ODI2NTZjN2MxMWMjNjA3Mjc2MzIyI1t0aDA3XzVdIOS4nOaWueiQg+aipuaDsyjmsYnljJbniYgr5pel5paH54mIKS43egpmMzkwNTA1MzA0OWFlYzhjOTkxODRhMDNiZGI2Y2E1NSMyNzkxNTE5ODYjW3RoMTBfNV0g5Lic5pa557uv5oOz5aSpKOaxieWMlueJiCvml6XmlofniYgpLjd6CmFmZjNkZjYxMDMyNThhMDllZTRiZDEzMmZjODhmZTFkIzI0OTY2NDQwMSNbdGgxMl8zXSDkuJzmlrnpnZ7mg7PlpKnliJko5rGJ5YyW54mIKS43egoxZDhmOGNjMGVkNjRkOTFlOGEyZWNiNzM4MGUzNmVhYSMzODkzNjU1MDYjW3RoMTNfNV0g5Lic5pa55b+D57uu5qW8KDEuMzPmsYnljJbniYgrMS4zNGLml6XmlofniYgpLjd6CjA0YTAzMGU4MTVlNzkwZDdjYmNhNTdhY2I4ZTQ2MmQ2Izc2NDM5OTUyMiNbdGgxNF81XSDkuJzmlrnmt7Hnp5jlvZUo5a6M5pW05rGJ5YyW54mIK+aXpeaWh+eJiCkuN3oKMGQ4NmJmMGQ5MzE1ZDYzODhmMjliNTRkNGRiY2IyNzAjMTAxNTgwNjUzMCNbdGgxNV81XSDkuJzmlrnlh63kvp3ljY4uN3oKMzVjYzhmYjNlOTcyOWE5MjdjNGM0ZTA5Y2Y3YzMxYWQjMTY5NjUyMTkzI+S4nOaWueWHreS+neWNjnYxLjE5YmV0YeihpeS4gS43eg==' target='_blank'>02 - 官方格斗作（黄昏边境）</a></p>-->
-    </div>
-    <div class='modal fade' id='infoModal'>
-        <div class='modal-dialog'>
-            <div class='modal-content'>
-                <div class='modal-header'>
-                    <h4 class='modal-title'>什么是东方Project？</h4>
-                    <button type='button' class='btn-close' data-bs-dismiss='modal'></button>
-                </div>
-                <div class='modal-body'>
-                    <p>东方Project是日本同人游戏社团上海爱丽丝幻乐团所制作的一系列同人游戏、相关作品，以及基于前者由爱好者所创作的二次创作所共同构成的覆盖游戏，动漫，音乐，文学等诸多方面的领域。</p>
-                    <p>本站即为东方Project官方游戏与其同人游戏的BT种子下载站。</p>
-                    <p>对了解东方Project有用的链接：</p>
-                    <p><a class='link' href='https://thwiki.cc/' target='_blank'>THBWiki</a></p>
-                    <p><a class='link' href='https://cn.thdog.moe/' target='_blank'>东方狗下载站</a></p>
-                    <p><a class='link' href='https://tieba.baidu.com/p/6324027400' target='_blank'>百度贴吧相关资源</a></p>
-                </div>
-                <div class='modal-footer'>
-                    <a class='button' href='javascript:void(0);' data-bs-dismiss='modal' style='padding: 8px 10px;'>关闭</a>
+        <div class='modal fade' id='info-modal'>
+            <div class='modal-dialog'>
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <h4 class='modal-title'>什么是东方Project？</h4>
+                        <button type='button' class='btn-close' data-bs-dismiss='modal'></button>
+                    </div>
+                    <div class='modal-body'>
+                        <p>东方Project是日本同人游戏社团上海爱丽丝幻乐团所制作的一系列同人游戏、相关作品，以及基于前者由爱好者所创作的二次创作所共同构成的覆盖游戏，动漫，音乐，文学等诸多方面的领域。</p>
+                        <p>本站即为东方Project官方游戏与其同人游戏的BT种子下载站。</p>
+                        <p>对了解东方Project有用的链接：</p>
+                        <p><a class='link' href='https://thwiki.cc/' target='_blank'>THBWiki</a></p>
+                        <p><a class='link' href='https://cn.thdog.moe/' target='_blank'>东方狗下载站</a></p>
+                        <p><a class='link' href='https://tieba.baidu.com/p/6324027400' target='_blank'>百度贴吧相关资源</a></p>
+                    </div>
+                    <div class='modal-footer'>
+                        <button type='button' class='button btn' data-bs-dismiss='modal'>关闭</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>

@@ -2,29 +2,29 @@
     {
         "code": "TH06",
         "name": "东方红魔乡",
-        "official": "Comic Market 62",
-        "download": "<a class='button' href='th06.torrent' download='th06.torrent' style='padding: 6px;'>下载</a>",
-        "chinese": "是"
+        "official": "无",
+        "download": "<a name='download' class='link' href='javascript:void(0);'>下载</a>",
+        "chinese": "否"
     },
     {
         "code": "TH07",
         "name": "东方妖妖梦",
-        "official": "Comic Market 64",
-        "download": "<a class='button' href='th07.torrent' download='th07.torrent' style='padding: 6px;'>下载</a>",
+        "official": "无",
+        "download": "<a name='download' class='link' href='javascript:void(0);'>下载</a>",
         "chinese": "是"
     },
     {
         "code": "TH08",
         "name": "东方永夜抄",
-        "official": "Comic Market 66",
-        "download": "<a class='button' href='th08.torrent' download='th08.torrent' style='padding: 6px;'>下载</a>",
+        "official": "无",
+        "download": "<a name='download' class='link' href='javascript:void(0);'>下载</a>",
         "chinese": "是"
     },
     {
         "code": "TH09",
         "name": "东方花映塚",
         "official": "<a class='link' href='https://store.steampowered.com/app/1420810/__Phantasmagoria_of_Flower_View/' target='_blank'>Steam</a>",
-        "download": "<a class='button' href='th09.torrent' download='th09.torrent' style='padding: 6px;'>下载</a>",
+        "download": "<a name='download' class='link' href='javascript:void(0);'>下载</a>",
         "chinese": "是"
     }
 ]

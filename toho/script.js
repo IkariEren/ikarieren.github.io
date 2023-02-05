@@ -1,3 +1,5 @@
+var num;
+var page;
 function torrentTime() {
     var timeNow = new Date().getHours();
     var status = document.getElementById('torrent');
@@ -19,39 +21,40 @@ function setVisited() {
     document.cookie = 'visited = 1;';
 }
 function switchPage(page) {
-    var pageNum = 1;
-    var url;
-    if (page == 1) {
-        url = 'table/int.json';
-        pageNum = 1;
+    var link;
+    
+    if (page == 1) {     
+        link = 'table/int.json';
+        num = 1;
     }
     if (page == 2) {
-        url = 'table/old.json';
-        pageNum = 2;
+        link = 'table/old.json';
+        num = 2;
     }
     if (page == 3) {
-        url = 'table/float1.json';
-        pageNum = 3;
+        link = 'table/float1.json';
+        num = 3;
     }
     if (page == 4) {
-        url = 'table/float2.json';
-        pageNum = 4;
+        link = 'table/float2.json';
+        num = 4;
     }
     if (page == 5) {
-        url = 'table/unofficial.json';
-        pageNum = 5;
+        link = 'table/unofficial.json';
+        num = 5;
     }
-    if (page == 'previous' && pageNum >= 2) {
-        switchPage(pageNum - 1);
+    if ((page == 'previous') && (num >= 2)) {
+        alert('1');
     }
-    if (page == 'next' && pageNum <= 4); {
-        switchPage(pageNum + 1);
+    if ((page == 'next') && (num <= 4)); {
+        alert('2');
     }
     $('#table').bootstrapTable('destroy');
     $('#table').bootstrapTable({
         method: 'get',
-        url: url,
-        theadClasses: 'thead-dark',
+        url: link,
+        theadClasses: 'table-dark',
+        classes: 'table table-bordered text-center',
         columns: [{
             field: 'code',
             title: '游戏编号'
@@ -70,7 +73,7 @@ function switchPage(page) {
         },
         {
             field: 'chinese',
-            title: '汉化',
+            title: '汉化'
         }
         ]
     });
@@ -79,7 +82,7 @@ $(document).ready(function () {
     checkVisited();
     torrentTime();
     switchPage(1);
-    $('#title').c.page - itemck(function () {
-        $('#infoModal').modal('show');
+    $('#title').click(function () {
+        $('#info-modal').modal('show');
     });
 });

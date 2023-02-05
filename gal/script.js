@@ -39,8 +39,11 @@ function downloadSet(method) {
                         document.getElementById('alert-game-title-bt').innerHTML = json.download[num].title;
                         document.getElementById('alert-download-bt').innerHTML = '您将要下载：' + '<code>' + json.download[num].bt + '</code>';
                         for (var i = 0; i < json.alert.length; i++) {
-                            if (num == json.alert[i].num) {
-                                document.getElementById('alert-text-bt').innerHTML = '说明：<br />' + json.alert[i].text;
+                            if (json.alert[i].id == json.download[num].title) {
+                                if (json.alert[i].class == "all" || json.alert[i].class == 1) {
+                                    document.getElementById('alert-text-bt').innerHTML = '说明：<br />' + json.alert[i].text;
+                                    break;
+                                }
                             }
                             else {
                                 document.getElementById('alert-text-bt').innerHTML = '';
@@ -67,8 +70,12 @@ function downloadSet(method) {
                         document.getElementById('alert-game-title').innerHTML = json.download[num].title;
                         document.getElementById('alert-download').innerHTML = '<p>您将要前往：</p>' + '<code style="display: block">' + json.download[num].bdlink + '</code>';
                         for (var i = 0; i < json.alert.length; i++) {
-                            if (num == json.alert[i].num) {
-                                document.getElementById('alert-text').innerHTML = '说明：<br />' + json.alert[i].text;
+                            if (json.alert[i].id == json.download[num].title) {
+                                document.getElementById('alert-text').innerHTML = '';
+                                if (json.alert[i].class == "all" || json.alert[i].class == 2) {
+                                    document.getElementById('alert-text').innerHTML = '说明：<br />' + json.alert[i].text;
+                                    break;
+                                }
                             }
                             else {
                                 document.getElementById('alert-text').innerHTML = '';
@@ -90,8 +97,13 @@ function downloadSet(method) {
                         document.getElementById('alert-game-title').innerHTML = json.download[num].title;
                         document.getElementById('alert-download').innerHTML = '<p>您将要前往：</p>' + '<code>' + json.download[num].bdshare + '</code>';
                         for (var i = 0; i < json.alert.length; i++) {
-                            if (num == json.alert[i].num) {
-                                document.getElementById('alert-text').innerHTML = '说明：<br />' + json.alert[i].text;
+                            if (json.alert[i].id == json.download[num].title) {
+                                document.getElementById('alert-text').innerHTML = '';
+                                if (json.alert[i].class == "all" || json.alert[i].class == 3) {
+                                    document.getElementById('alert-text').innerHTML = '';
+                                    document.getElementById('alert-text').innerHTML = '说明：<br />' + json.alert[i].text;
+                                    break;
+                                }
                             }
                             else {
                                 document.getElementById('alert-text').innerHTML = '';
